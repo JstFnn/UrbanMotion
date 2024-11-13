@@ -1,0 +1,397 @@
+/* Global Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Kontainer utama */
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto; /* Center konten */
+}
+
+.main-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  align-items: center; /* Center secara horisontal */
+}
+
+/* Heros */
+/* Styling for Hero Component */
+
+.Heros {
+  width: 1240px;
+  height: 500px;
+  z-index: 0;
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(11, 46, 52, 1) 0%, rgba(0, 0, 0, 0.2) 100%),
+    url(./../../assets/images/heross.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 271px 116px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  position: absolute; /* Menggunakan relative */
+  top: 0;
+  left: 0;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: center;
+  width: 1240px;
+  position: relative;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 773px;
+}
+
+.hero-text h1 {
+  color: var(--textcolor-30); /* Text color from :root */
+  font-family: var(--headline-1-bold-55-font-family);
+  font-size: var(--headline-1-bold-55-font-size);
+  line-height: var(--headline-1-bold-55-line-height);
+  font-weight: var(--headline-1-bold-55-font-weight);
+  text-align: left;
+}
+.hero-content .hero-text p {
+  color: var(--textcolor-30); /* Text color from :root */
+  font-family: var(--paragraf-2-reguler-18-font-family, "OpenSans-Regular", sans-serif);
+  font-size: var(--paragraf-2-reguler-18-font-size, 18px);
+  line-height: var(--paragraf-2-reguler-18-line-height, 32px);
+  font-weight: var(--paragraf-2-reguler-18-font-weight, 400);
+  flex: 1;
+}
+
+/* Kontainer untuk Card */
+.card-content {
+  display: flex;
+  justify-content: center; /* Pusatkan kedua panel secara horisontal */
+  gap: 30px;
+  flex-wrap: wrap; /* Responsif - memungkinkan elemen menumpuk pada ukuran layar kecil */
+  width: 100%;
+}
+
+/* Panel Kanan (Informasi Kontak) */
+.right-panel {
+  background: var(--primary-10);
+  border-radius: 30px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  height: 748px;
+  position: relative;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.29);
+  flex: 1 1 48%; /* Sesuaikan dengan panel kanan */
+}
+
+/* Left Panel (Formulir Kontak) */
+.left-panel {
+  background: var(--background-10);
+  border-radius: 30px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  height: 748px;
+  position: relative;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.29);
+  flex: 1 1 48%; /* Sesuaikan dengan panel kanan */
+}
+
+/* Header Title */
+.header-title-form {
+  color: var();
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 40px;
+  line-height: 54px;
+  font-weight: 700;
+}
+
+/* Subtitle */
+.subtitle-form {
+  color: #6e6e6e;
+  text-align: left;
+  font-family: var(--paragraf-2-reguler-18-font-family, "OpenSans-Regular", sans-serif);
+  font-size: var(--paragraf-2-reguler-18-font-size, 18px);
+  line-height: var(--paragraf-2-reguler-18-line-height, 32px);
+  font-weight: var(--paragraf-2-reguler-18-font-weight, 400);
+  position: relative;
+  flex: 1;
+}
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Row */
+.row {
+  display: flex;
+  gap: 20px; /* Jarak antar field dalam satu baris */
+  width: 100%;
+}
+
+/* Form Field */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  flex: 1; /* Agar masing-masing field mengisi ruang secara proporsional */
+}
+
+/* Label */
+.label {
+  color: #2d2d2d;
+  text-align: left;
+  font-family: var(--form-label-font-family, "OpenSans-SemiBold", sans-serif);
+  font-size: var(--form-label-font-size, 17px);
+  line-height: var(--form-label-line-height, 29px);
+  font-weight: var(--form-label-font-weight, 600);
+  position: relative;
+  align-self: stretch;
+}
+
+/* Input Field */
+.input-field {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Input Text */
+.input-text {
+  color: #6e6e6e;
+  text-align: left;
+  font-family: var(--body-small-font-family, "OpenSans-Regular", sans-serif);
+  font-size: var(--body-small-font-size, 15px);
+  font-weight: var(--body-small-font-weight, 400);
+  position: relative;
+  flex: 1;
+}
+
+/* Text Area */
+.input-field-message {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%; /* Full width */
+  min-height: 100px; /* Minimum height */
+  box-sizing: border-box; /* Ensures padding doesn't add extra width */
+  resize: vertical; /* Allows resizing the height of the textarea */
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: var(--primary-10);
+  border-radius: 50px;
+  padding: 12x 30px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  color: #f8f3ed;
+  font-family: "OpenSans-SemiBold", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  scale: 1.05;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-info-title {
+  color: var(--textcolor-30, #f8f3ed);
+  text-align: left;
+  font-family: var(--accent-font-family, "OpenSans-SemiBold", sans-serif);
+  font-size: var(--accent-font-size, 15px);
+  letter-spacing: var(--accent-letter-spacing, 0.15em);
+  font-weight: var(--accent-font-weight, 600);
+  text-transform: uppercase;
+}
+
+.contact-header-title {
+  color: var(--textcolor-30, #f8f3ed);
+  text-align: left;
+  font-family: var(--headline-2-bold-35-font-family, "OpenSans-Bold", sans-serif);
+  font-size: var(--headline-2-bold-35-font-size, 40px);
+  line-height: var(--headline-2-bold-35-line-height, 54px);
+  font-weight: var(--headline-2-bold-35-font-weight, 700);
+  position: relative;
+  flex: 1;
+}
+
+.contact-subtitle p {
+  color: var(--textcolor-30, #f8f3ed) !important;
+  text-align: left;
+  font-family: var(--paragraf-2-reguler-18-font-family, "OpenSans-Regular", sans-serif);
+  font-size: var(--paragraf-2-reguler-18-font-size, 18px);
+  line-height: var(--paragraf-2-reguler-18-line-height, 32px);
+  font-weight: var(--paragraf-2-reguler-18-font-weight, 400);
+  position: relative;
+  flex: 1;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-info-item .label {
+  color: var(--textcolor-30, #f8f3ed);
+  text-align: left;
+  font-family: var(--title-1-bold-24-font-family, "OpenSans-Bold", sans-serif);
+  font-size: var(--title-1-bold-24-font-size, 24px);
+  line-height: var(--title-1-bold-24-line-height, 40px);
+  font-weight: var(--title-1-bold-24-font-weight, 700);
+  position: relative;
+  align-self: stretch;
+}
+
+.contact-info-item p:nth-child(2) {
+  color: var(--textcolor-30, #f8f3ed);
+  text-align: left;
+  font-family: var(--paragraf-2-reguler-18-font-family);
+  font-size: var(--paragraf-2-reguler-18-font-size, 18px);
+  line-height: var(--paragraf-2-reguler-18-line-height, 32px);
+  font-weight: var(--paragraf-2-reguler-18-font-weight, 400);
+}
+
+.icon-box .contact-info-item .label i {
+  margin-right: 10px; /* Memberi jarak antara ikon dan teks */
+  color: var(--iconcolor-20); /* Mengatur warna ikon */
+  font-size: 20px; /* Ukuran ikon */
+}
+
+/* Efek hover pada panel kanan */
+.right-panel:hover {
+  background-color: #ffffff; /* Latar belakang menjadi putih */
+  color: var(--primary-10); /* Teks menjadi warna gelap primary */
+}
+
+/* Efek hover pada setiap item kontak di dalam panel kanan */
+.right-panel:hover .contact-info-item {
+  background-color: #ffffff; /* Latar belakang item kontak menjadi putih */
+  color: var(--primary-10); /* Teks item kontak menjadi warna gelap primary */
+}
+
+/* Efek hover pada label di dalam contact-info-item */
+.right-panel:hover .contact-info-item .label {
+  color: var(--primary-10); /* Warna label menjadi gelap primary */
+}
+
+/* Efek hover pada paragraf di dalam contact-info-item */
+.right-panel:hover .contact-info-item p {
+  color: var(--primary-10); /* Warna teks paragraf menjadi gelap primary */
+}
+
+/* Efek hover pada ikon di dalam contact-info-item */
+.right-panel:hover .contact-info-item .label i {
+  color: var(--primary-10); /* Ikon menjadi warna gelap primary */
+}
+.right-panel:hover .contact-info-title {
+  color: var(--primary-10); /* Ikon menjadi warna gelap primary */
+}
+
+/* Efek hover pada judul header di dalam panel kanan */
+.right-panel:hover .contact-header-title {
+  color: var(--primary-10); /* Warna header-title menjadi gelap primary */
+}
+
+/* Efek hover pada subtitle di dalam panel kanan */
+.right-panel:hover .contact-subtitle p {
+  color: var(--primary-10) !important; /* Warna subtitle menjadi gelap primary */
+}
+
+/* Map Widget */
+.map-widget {
+  border-radius: 35px;
+  border: 3px solid #0b2e34;
+  width: 1205px;
+  height: 300px;
+  position: relative;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.map-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+}
+.view-on-map-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.view-on-map-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

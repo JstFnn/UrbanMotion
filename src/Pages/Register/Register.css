@@ -1,0 +1,165 @@
+/* Container styles */
+.container {
+  display: flex;
+  width: 200vw;
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* Left section */
+.left {
+  background: linear-gradient(#0b2e34, #235347);
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+/* Right section */
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-left: 100px;
+  margin-right: -100px;
+}
+
+/* Form styles */
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.login-form p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.login-form label {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Checkbox label alignment */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Button styles */
+button#registerButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #235347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.register {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register a {
+  color: #235347;
+  text-decoration: none;
+}
+
+/* Google login button */
+.google-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.google-login img {
+  margin-right: 10px;
+}
+
+/* Popup overlay */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Popup content */
+.popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 8px;
+  text-align: center;
+  width: 200px;
+}
+
+.popup img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+button#closePopup {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  background-color: #0b2e34;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
