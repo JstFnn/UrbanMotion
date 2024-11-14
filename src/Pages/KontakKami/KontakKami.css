@@ -84,6 +84,8 @@
 
 /* Kontainer untuk Card */
 .card-content {
+  margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center; /* Pusatkan kedua panel secara horisontal */
   gap: 30px;

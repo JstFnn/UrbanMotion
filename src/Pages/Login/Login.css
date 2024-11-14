@@ -1,16 +1,32 @@
 /* Container and Flex Layout */
-.container {
+.Login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Full viewport height */
+  margin: 0;
+  overflow: hidden;
+}
+.Login .container {
   display: flex;
   width: 100vw;
   height: 100vh;
   font-family: "Open Sans", sans-serif;
-  padding: 0;
+  overflow: hidden; /* Prevent overflow */
+  border-radius: 5%;
+  border: 2px solid;
+}
+
+.Login .container .left,
+.Login .container .right {
   margin: 0;
-  overflow: hidden;
+  padding: 0; /* Pastikan tidak ada padding yang menyebabkan ruang */
 }
 
 /* Left Section */
-.left {
+.Login .container .left {
+  width: 100%;
   background: linear-gradient(var(--primary-10), var(--primary-20));
   color: var(--textcolor-30);
   flex: 1;
@@ -19,32 +35,31 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  margin: 0;
 }
 
-.logo {
+.Login .container .left .logo {
   margin-bottom: 20px;
   height: 200px;
   width: 600px;
 }
 
 /* Right Section */
-.right {
+.Login .container .right {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin-left: 100px;
-  margin-right: -100px;
 }
 
 /* Login Form */
-.login-form {
+.Login .container .right .login-form {
   width: 100%;
   max-width: 400px;
 }
 
-h2 {
+.Login .container .right .login-form h2 {
   font-family: "Open Sans", sans-serif;
   font-size: 24px;
   line-height: 40px;
@@ -54,7 +69,7 @@ h2 {
   color: var(--textcolor-10);
 }
 
-p {
+.Login .container .right .login-form p {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 32px;
@@ -63,7 +78,8 @@ p {
   text-align: center;
 }
 
-label {
+.Login .container .right .login-form label {
+  text-align: left;
   display: block;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
@@ -71,7 +87,7 @@ label {
   color: var(--textcolor-10);
 }
 
-input {
+.Login .container .right .login-form input {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -80,7 +96,7 @@ input {
 }
 
 /* Styling untuk checkbox dan label yang rata kiri */
-.checkbox-label {
+.Login .container .right .login-form .checkbox-label {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -89,18 +105,18 @@ input {
   color: var(--textcolor-50); /* Gunakan warna teks yang lebih lembut */
 }
 
-.checkbox-label input {
+.Login .container .right .login-form .checkbox-label input {
   margin-top: 17px;
   margin-right: 15px; /* Memberikan jarak antara checkbox dan label */
   width: auto; /* Agar lebar checkbox sesuai dengan ukuran aslinya */
 }
 
-.checkbox-label label {
+.Login .container .right .login-form .checkbox-label label {
   margin: 0; /* Menghilangkan margin di label agar lebih rapat */
   cursor: pointer; /* Menambahkan pointer cursor agar terlihat bisa diklik */
 }
 
-button {
+.Login .container .right .login-form button {
   width: 100%;
   padding: 10px;
   background-color: var(--button-10);
@@ -111,17 +127,17 @@ button {
   cursor: pointer;
 }
 
-.register {
+.Login .container .right .login-form .register {
   text-align: center;
   margin-top: 20px;
 }
 
-.register a {
+.Login .container .right .login-form .register a {
   color: var(--button-10);
   text-decoration: none;
 }
 
-.google-login {
+.Login .container .right .login-form .google-login {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,15 +147,18 @@ button {
   cursor: pointer;
   margin-top: 5px;
 }
+.Login .container .right .login-form .google-login span {
+  margin-left: 15px;
+}
 
-.google-logo {
+.Login .container .right .login-form .google-logo {
   margin-right: 10px;
   height: 20px;
   width: 20px;
 }
 
 /* Pop-up Styles */
-.popup-overlay {
+.Login .popup-overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -150,7 +169,7 @@ button {
   z-index: 999;
 }
 
-.popup {
+.Login .popup {
   display: none;
   position: fixed;
   left: 50%;
@@ -166,13 +185,13 @@ button {
   width: 200px;
 }
 
-.popup img {
+.Login .popup img {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
 }
 
-.popup button {
+.Login .popup button {
   margin-top: 10px;
   padding: 8px 15px;
   border: none;

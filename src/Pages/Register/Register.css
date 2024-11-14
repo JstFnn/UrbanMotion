@@ -1,15 +1,21 @@
 /* Container styles */
-.container {
+.register {
+  margin: 0;
+  padding: 0;
+}
+
+.register .container {
   display: flex;
   width: 200vw;
   height: 100%;
   font-family: "Open Sans", sans-serif;
   padding: 0;
   margin: 0;
+  z-index: 1;
 }
 
 /* Left section */
-.left {
+.register .left {
   background: linear-gradient(#0b2e34, #235347);
   color: white;
   flex: 1;
@@ -17,51 +23,51 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
-.logo {
+.register .left .logo {
   margin-bottom: 20px;
 }
 
 /* Right section */
-.right {
+.register .right {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  margin-left: 100px;
-  margin-right: -100px;
+  /* padding: 20px; */
+  /* margin-left: 100px;
+  margin-right: -100px; */
 }
 
 /* Form styles */
-.login-form {
+.register .right .login-form {
   width: 100%;
   max-width: 400px;
   text-align: center;
 }
 
-.login-form h2 {
+.register .right .login-form h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
-.login-form p {
+.register .right .login-form p {
   font-size: 14px;
   color: #666;
   margin-bottom: 20px;
 }
 
-.login-form label {
+.register .right .login-form label {
   display: flex;
   align-items: flex-start;
   font-size: 14px;
   margin-bottom: 5px;
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"] {
+.register .right .login-form input[type="text"],
+.register .right .login-form input[type="password"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -69,15 +75,25 @@
   border-radius: 5px;
 }
 
-/* Checkbox label alignment */
-.checkbox-label {
+/* Styling untuk checkbox dan label yang rata kiri */
+.register .container .right .login-form .checkbox-label {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: var(--textcolor-50); /* Gunakan warna teks yang lebih lembut */
 }
 
-.checkbox-label input[type="checkbox"] {
-  margin-right: 10px;
+.register .container .right .login-form .checkbox-label input {
+  margin-top: 0px;
+  margin-right: 15px; /* Memberikan jarak antara checkbox dan label */
+  width: auto; /* Agar lebar checkbox sesuai dengan ukuran aslinya */
+}
+
+.register .container .right .login-form .checkbox-label label {
+  margin: 0; /* Menghilangkan margin di label agar lebih rapat */
+  cursor: pointer; /* Menambahkan pointer cursor agar terlihat bisa diklik */
 }
 
 /* Button styles */
@@ -92,18 +108,18 @@ button#registerButton {
   cursor: pointer;
 }
 
-.register {
+.register .right .register {
   text-align: center;
   margin-top: 20px;
 }
 
-.register a {
+.register .right .register a {
   color: #235347;
   text-decoration: none;
 }
 
 /* Google login button */
-.google-login {
+.register .right .google-login {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,12 +130,14 @@ button#registerButton {
   margin-top: 5px;
 }
 
-.google-login img {
-  margin-right: 10px;
+.register .right .google-login img {
+  margin-right: 15px;
 }
 
 /* Popup overlay */
-.popup-overlay {
+
+/* Pop-up Styles */
+.register .popup-overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -130,8 +148,7 @@ button#registerButton {
   z-index: 999;
 }
 
-/* Popup content */
-.popup {
+.register .popup {
   display: none;
   position: fixed;
   left: 50%;
@@ -147,19 +164,22 @@ button#registerButton {
   width: 200px;
 }
 
-.popup img {
+.register .popup img {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
 }
 
-button#closePopup {
+.register .popup button {
   margin-top: 10px;
   padding: 8px 15px;
   border: none;
-  background-color: #0b2e34;
+  background-color: var(--primary-10);
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   transition: background-color 0.3s;
 }

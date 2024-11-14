@@ -4,8 +4,8 @@ import { Navbar } from "./Components/Navbar/Navbar.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 import KontakKami from "./Pages/KontakKami/KontakKami";
 import TentangKami from "./Pages/TentangKami/TentangKami";
-// import Login from "./Pages/Login/Login";
-// import Register from "./Pages/Register/Register";
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register";
 import "./styles.css";
 
 function AppContent() {
@@ -48,8 +48,8 @@ function AppContent() {
           <Route path="/sewa" element={<div>Sewa </div>} />
           <Route path="/daftar-harga" element={<div>Daftar Harga </div>} />
           <Route path="/kontak" element={<KontakKami />} />
-          <Route path="/login" element={<div>Login </div>} />
-          <Route path="/register" element={<div>register </div>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/dummy" element={<div>Lorem Ipsum</div>} />
         </Routes>
       </div>
