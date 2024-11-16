@@ -1,16 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Profil } from "../Profil/Profil.jsx"; // Komponen profil yang sudah Anda buat
-import "./Navbar.css"; // Impor CSS di sini
+import { Profil } from "../Profil/Profil.jsx"; // Komponen profil yang sudah dibuat
+import "./Navbar.css"; // Impor file CSS untuk gaya Navbar
 
 export const Navbar = ({ className, ...props }) => {
-  // State untuk status login, dropdown, dan menu di tampilan mobile
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State untuk toggle menu di tampilan mobile
-  const [activeMenu, setActiveMenu] = useState(null);
-  const navigate = useNavigate();
-  const location = useLocation();
+  // State untuk mengatur status login, dropdown, menu mobile, dan shadow pada navbar
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Status login pengguna
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Status dropdown terbuka/tertutup
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Status menu mobile terbuka/tertutup
+  const [activeMenu, setActiveMenu] = useState(null); // Menu aktif saat ini
+  const [hasShadow, setHasShadow] = useState(false); // Menambahkan shadow ke navbar saat scroll
+
+  const navigate = useNavigate(); // Hook untuk navigasi antar halaman
+  const location = useLocation(); // Hook untuk mendapatkan informasi lokasi saat ini
+
+  // Menambahkan event listener untuk menambahkan shadow saat scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasShadow(window.scrollY > 10); // Shadow aktif jika pengguna scroll lebih dari 10px
+    };
+
+    // Tambahkan listener saat komponen mount
+    window.addEventListener("scroll", handleScroll);
+
+    // Hapus listener saat komponen unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Fungsi untuk navigasi ke halaman login
   const handleLoginClick = () => {
@@ -22,23 +39,23 @@ export const Navbar = ({ className, ...props }) => {
     navigate("/my-account");
   };
 
-  // Fungsi untuk navigasi ke halaman utama dan menutup menu
+  // Fungsi untuk navigasi ke halaman tertentu dan menutup menu dropdown/menu mobile
   const handleMenuClick = (route) => {
-    navigate(route);
-    setActiveMenu(route);
-    setIsMenuOpen(false); // Tutup menu mobile setelah klik link
+    navigate(route); // Navigasi ke halaman
+    setActiveMenu(route); // Set menu aktif
+    setIsMenuOpen(false); // Tutup menu mobile
     setIsDropdownOpen(false); // Tutup dropdown jika terbuka
   };
 
-  // Fungsi untuk navigasi ke submenu dan menutup dropdown/menu
+  // Fungsi untuk navigasi ke submenu dalam dropdown
   const handleSubMenuClick = (route) => {
-    navigate(route);
-    setIsMenuOpen(false); // Tutup menu mobile setelah pilih submenu
-    setIsDropdownOpen(false); // Tutup dropdown jika terbuka
-    setActiveMenu("/transportasi-umum");
+    navigate(route); // Navigasi ke halaman submenu
+    setIsMenuOpen(false); // Tutup menu mobile
+    setIsDropdownOpen(false); // Tutup dropdown
+    setActiveMenu("/transportasi-umum"); // Set menu "Transportasi Umum" sebagai aktif
   };
 
-  // Daftar link utama untuk menu navbar
+  // Array untuk daftar menu utama
   const links = [
     { path: "/", label: "Beranda" },
     { path: "/tentang-kami", label: "Tentang kami" },
@@ -48,7 +65,7 @@ export const Navbar = ({ className, ...props }) => {
     { path: "/kontak", label: "Kontak" },
   ];
 
-  // Daftar item dropdown untuk menu "Transportasi Umum"
+  // Array untuk item dropdown di menu "Transportasi Umum"
   const dropdownItems = [
     { path: "/transportasi-umum/jadwal", label: "Jadwal Transportasi" },
     { path: "/transportasi-umum/peta", label: "Peta Rute" },
@@ -56,44 +73,51 @@ export const Navbar = ({ className, ...props }) => {
   ];
 
   return (
-    <div className={`navbar-container ${className}`}>
+    // Container utama untuk navbar, menambahkan shadow jika `hasShadow` aktif
+    <div className={`navbar-container ${className} ${hasShadow ? "shadow" : ""}`}>
       {/* Logo navbar */}
       <div className="navbar-logo">
-        <img src="/src/assets/images/logo.png" alt="Logo" />
+        <img src="/src/assets/images/logo.png" alt="Logo" /> {/* Menampilkan logo */}
       </div>
 
       {/* Tombol toggle menu untuk tampilan mobile */}
       <button
         className={`navbar-toggle ${isMenuOpen ? "open" : ""}`}
-        onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle menu visibility
+        onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle status menu mobile
       >
-        <i className={`fas fa-bars ${isMenuOpen ? "open" : ""}`}></i>
+        <i className={`fas fa-bars ${isMenuOpen ? "open" : ""}`}></i> {/* Ikon menu */}
       </button>
 
-      {/* Link utama di navbar */}
+      {/* Daftar menu utama */}
       <div className={`navbar-links ${isMenuOpen ? "open" : ""}`}>
         {links.map((link) => (
           <div
-            key={link.path}
-            onClick={() =>
-              link.path === "/transportasi-umum" ? setIsDropdownOpen(!isDropdownOpen) : handleMenuClick(link.path)
+            key={link.path} // Key unik untuk setiap menu
+            onClick={
+              () =>
+                link.path === "/transportasi-umum" // Jika menu "Transportasi Umum" dipilih
+                  ? setIsDropdownOpen(!isDropdownOpen) // Toggle dropdown
+                  : handleMenuClick(link.path) // Navigasi ke halaman lain
             }
-            className={`navbar-item ${activeMenu === link.path ? "active" : ""}`}
+            className={`navbar-item ${activeMenu === link.path ? "active" : ""}`} // Menambahkan kelas aktif
           >
-            <div className="navbar-item-text flex items-center">
-              {link.label}
-              {/* Ikon dropdown untuk "Transportasi umum" */}
-              {link.label === "Transportasi umum" && (
-                <i className={`fas fa-chevron-down dropdown-icon ${isDropdownOpen ? "open" : ""}`}></i>
+            <span className="navbar-item-text">
+              {link.label} {/* Label menu */}
+              {/* Ikon dropdown untuk menu "Transportasi Umum" */}
+              {link.path === "/transportasi-umum" && (
+                <i className={`fas fa-chevron-down ${isDropdownOpen ? "open" : ""}`}></i>
               )}
-            </div>
+            </span>
 
-            {/* Dropdown menu jika "Transportasi Umum" dipilih */}
-            {link.label === "Transportasi umum" && isDropdownOpen && (
+            {/* Dropdown menu untuk "Transportasi Umum" */}
+            {link.path === "/transportasi-umum" && isDropdownOpen && (
               <div className="dropdown-menu">
                 {dropdownItems.map((item) => (
-                  <div key={item.path} onClick={() => handleSubMenuClick(item.path)} className="dropdown-item">
-                    {item.label}
+                  <div
+                    key={item.path} // Key unik untuk setiap dropdown item
+                    onClick={() => handleSubMenuClick(item.path)} // Navigasi ke submenu
+                    className="dropdown-item">
+                    {item.label} {/* Label dropdown */}
                   </div>
                 ))}
               </div>
@@ -103,7 +127,7 @@ export const Navbar = ({ className, ...props }) => {
 
         {/* Tombol login atau profil */}
         <div className={`login-button ${isLoggedIn ? "desktop-visible" : ""}`} onClick={handleLoginClick}>
-          <span className="login-button-text">{isLoggedIn ? "Profil" : "Login"}</span>
+          <span className="login-button-text">{isLoggedIn ? "Profil" : "Login"}</span> {/* Teks tombol */}
         </div>
       </div>
     </div>

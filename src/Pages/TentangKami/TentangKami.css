@@ -1,115 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
-/* Hero Section */
-.hero {
-  width: 1240px;
-  height: 500px;
-}
-
-.hero img {
+.Hero-TK {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #f8f3ed;
-  padding-left: 100px;
-  padding-right: 650px;
-  box-sizing: border-box; /* Pastikan padding tidak menambah lebar elemen */
-}
-
-.hero h1 {
-  margin-top: 0px;
-  font-size: 55px;
-  font-weight: bold;
-}
-
-.hero p {
-  font-size: 18px;
-  letter-spacing: 0.5px;
-}
-
-/* Responsif untuk layar tablet (lebar maksimal 992px) */
-@media (max-width: 768px) {
-  .hero-overlay {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 40px; /* Memberikan ruang atas agar teks turun lebih banyak */
-  }
-
-  .hero h1 {
-    font-size: 40px;
-    margin-top: 30px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-}
-
-/* Responsif untuk layar ponsel (lebar maksimal 576px) */
-@media (max-width: 480px) {
-  .hero-overlay {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 40px; /* Memberikan ruang atas agar teks turun lebih banyak */
-  }
-
-  .hero h1 {
-    font-size: 24px;
-  }
-
-  .hero p {
-    font-size: 12px;
-  }
+  max-width: 1240px;
+  height: 450px;
+  margin-bottom: 150px;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 /* Layout Utama */
-.services {
-  margin-top: 50px;
+.services-tentangkami {
+  margin-top: 60px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 60px;
+  box-sizing: border-box;
 }
 
-.container {
+.container-tentangkami {
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
 }
 
-.images {
+.images-tentangkami {
   flex: 0 0 auto;
   margin-right: 2rem;
 }
 
-.images img {
-  width: 600px;
-  height: 500px;
+.images-tentangkami img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
 }
 
-.content {
+.content-tentangkami {
   flex: 1;
   text-align: center;
 }
 
-.content h2 {
+.content-tentangkami h2 {
   font-size: 34px;
   font-weight: bold;
   color: #05181c;
   margin-top: 70px;
 }
 
-.content p {
+.content-tentangkami p {
   font-size: 19.7px;
   text-align: justify;
   color: #05181c;
@@ -117,172 +57,178 @@
 
 /* Responsif untuk Tablet (Lebar Maksimal 992px) */
 @media (max-width: 768px) {
-  .services {
-    padding: 20px; /* Mengurangi padding untuk tablet */
+  .Hero-TK {
+    margin: 0;
   }
 
-  .container {
-    flex-direction: column; /* Gambar dan teks menjadi kolom di tablet */
+  .services-tentangkami {
+    margin-top: 500px;
+    padding: 20px;
+  }
+
+  .container-tentangkami {
+    flex-direction: column;
     align-items: center;
-    width: 90%; /* Mengurangi lebar agar lebih rapi */
     margin: 0 auto;
+    width: 90%;
   }
 
-  .images {
-    margin: 0 auto 20px auto; /* Center gambar di tablet */
+  .images-tentangkami {
+    margin: 0 auto 20px;
   }
 
-  .images img {
-    width: 90%; /* Memperkecil gambar untuk tablet */
-    height: auto; /* Menjaga rasio aspek */
+  .images-tentangkami img {
+    width: 90%;
+    height: auto;
     margin-bottom: 20px;
   }
 
-  .content {
-    text-align: center; /* Menyelaraskan teks di tengah */
+  .content-tentangkami {
+    text-align: center;
   }
 
-  .content h2 {
-    font-size: 26px; /* Ukuran font lebih kecil untuk tablet */
+  .content-tentangkami h2 {
+    font-size: 26px;
     margin-top: 10px;
   }
 
-  .content p {
-    font-size: 18px; /* Ukuran font paragraf lebih kecil untuk tablet */
+  .content-tentangkami p {
+    font-size: 18px;
   }
 }
 
 /* Responsif untuk Ponsel (Lebar Maksimal 576px) */
 @media (max-width: 480px) {
-  .services {
-    padding: 20px;
+  .services-tentangkami {
+    margin-top: 350px;
+    padding: 10px;
   }
 
-  .images img {
-    width: 100%; /* Lebar gambar 100% untuk ponsel */
-    height: 100%;
+  .images-tentangkami img {
+    width: 100%;
+    height: auto;
   }
 
-  .content h2 {
+  .content-tentangkami h2 {
     font-size: 24px;
   }
 
-  .content p {
+  .content-tentangkami p {
     font-size: 16px;
   }
 }
 
 /* Features Section */
-.features {
+.features-tentangkami {
   display: flex;
-  flex-direction: column; /* Ubah arah flex menjadi kolom */
+  flex-direction: column;
   margin-top: 50px;
 }
 
-.title {
-  font-size: 40px; /* Ukuran font judul */
-  font-weight: bold; /* Menebalkan teks */
-  color: #05181c; /* Warna teks */
-  margin-bottom: 24px; /* Jarak bawah judul */
+.title-tentangkami {
+  font-size: 40px;
+  font-weight: bold;
+  color: #05181c;
+  margin-bottom: 24px;
   padding: 0 50px;
   text-align: center;
 }
 
-.features .grid {
-  display: grid; /* Menggunakan grid layout */
-  grid-template-columns: repeat(3, 1fr); /* Tiga kolom */
-  gap: 10px; /* Jarak antar kotak */
-  margin-top: 20px; /* Jarak atas grid */
+.features-tentangkami .grid-tentangkami {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
   padding: 0 100px;
 }
 
 .card {
-  padding: 20px; /* Padding dalam kartu */
-  border-radius: 8px; /* Sudut membulat */
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .card-title {
-  font-size: 1.25em; /* Ukuran font judul kartu */
-  font-weight: 600; /* Menebalkan teks judul kartu */
-  margin-bottom: 8px; /* Jarak bawah judul kartu */
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .card-text {
-  color: #555; /* Warna teks dalam kartu */
+  color: #555;
 }
+
+/* Responsif untuk Tablet (Lebar Maksimal 768px) */
 @media (max-width: 768px) {
-  .title {
-    font-size: 32px; /* Mengurangi ukuran font judul untuk tablet */
+
+
+  .title-tentangkami {
+    font-size: 32px;
   }
 
   .card img {
-    width: 60px !important; /* Mengurangi ukuran gambar di dalam card untuk tablet */
-    height: 60px !important; /* Mengurangi ukuran gambar di dalam card untuk tablet */
+    width: 60px;
+    height: 60px;
   }
 
   .card-title {
-    font-size: 1.15em; /* Ukuran font judul di dalam card untuk tablet */
+    font-size: 1.15em;
   }
 
   .card-text {
-    font-size: 0.95em; /* Mengurangi ukuran font teks di dalam card untuk tablet */
+    font-size: 0.95em;
+  }
+
+  .features-tentangkami .grid-tentangkami {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* Responsif untuk Ponsel (Lebar Maksimal 480px) */
 @media (max-width: 480px) {
-  .title {
-    font-size: 20px; /* Ukuran font judul lebih kecil untuk ponsel */
+  .title-tentangkami {
+    font-size: 20px;
   }
 
   .card img {
-    width: 50px !important; /* Ukuran gambar lebih kecil di dalam card untuk ponsel */
-    height: 50px !important;
-    margin-left: -10px;
+    width: 50px;
+    height: 50px;
   }
 
   .card-title {
-    font-size: 10px; /* Ukuran font judul di dalam card lebih kecil di ponsel */
+    font-size: 10px;
   }
 
   .card-text {
-    font-size: 10px; /* Ukuran font teks lebih kecil di dalam card untuk ponsel */
+    font-size: 10px;
+  }
+
+  .features-tentangkami .grid-tentangkami {
+    grid-template-columns: 1fr;
   }
 }
 
-.Tujuan {
+.Tujuan-tentangkami {
   padding: 2rem;
   background-color: #0b2e34;
   margin-top: 100px;
+  box-sizing: border-box;
 }
 
-.tujuankami {
+.tujuankami-tentangkami,
+.subtitle-tentangkami,
+.description-tentangkami {
   font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  margin-left: 50px;
-  margin-right: 50px;
   color: #f8f3ed;
+  margin: 0 50px;
 }
 
-.subtitle {
+.subtitle-tentangkami {
   font-size: 1.875rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  margin-left: 50px;
-  margin-right: 50px;
-  color: #f8f3ed;
 }
 
-.description {
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
-  margin-left: 50px;
-  margin-right: 50px;
-  color: #f8f3ed;
-}
-
-.box {
+.box-tentangkami {
   background-color: white;
   border-radius: 0.5rem;
   padding: 1.5rem;
@@ -291,18 +237,18 @@
   margin-right: 50px;
 }
 
-.box-title {
+.box-title-tentangkami {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: #05181c;
 }
 
-.box-content {
+.box-content-tentangkami {
   margin-top: 1rem;
 }
 
-.mission-item {
+.mission-item-tentangkami {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
@@ -323,94 +269,100 @@
 
 .mission-description {
   color: #6e6e6e;
-  margin-top: -10px;
 }
 
-.box-description {
+.box-description-tentangkami {
   color: #6e6e6e;
 }
 
 /* Jasa Section */
-.jasa {
-  display: flex; /* Menggunakan flexbox untuk layout */
-  align-items: flex-start; /* Menyelaraskan item di bagian atas */
-  padding: 2rem; /* Memberikan padding di sekitar section */
+.jasa-tentangkami {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-.page4 {
-  flex: 0 0 250px; /* Lebar tetap untuk gambar */
-  margin-right: 2rem; /* Memberikan jarak antara gambar dan teks */
+.page4-tentangkami {
+  flex: 0 0 250px;
+  margin-right: 2rem;
 }
 
-.page4 img {
-  margin-left: 20px; /* Margin kiri sesuai permintaan */
-  width: 600px; /* Memastikan gambar menyesuaikan lebar kontainer */
-  height: 500px; /* Menjaga proporsi gambar */
+.page4-tentangkami img {
+  margin-left: 20px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
 }
 
-.petikatas img {
-  margin-left: 0px; /* Margin kiri sesuai permintaan */
-  width: 50px; /* Memastikan gambar menyesuaikan lebar kontainer */
-  height: 40px; /* Menjaga proporsi gambar */
+.petikatas-tentangkami img,
+.petikbawah-tentangkami img {
+  width: 50px;
+  height: 40px;
   margin-bottom: 10px;
 }
 
-.petikbawah img {
-  margin-left: 500px; /* Margin kiri sesuai permintaan */
-  margin-top: -20px;
-  width: 50px; /* Memastikan gambar menyesuaikan lebar kontainer */
-  height: 40px; /* Menjaga proporsi gambar */
-}
-
-.kalimat p {
-  font-size: 19.7px; /* Ukuran font untuk paragraf */
-  margin-top: 0; /* Menghapus margin atas pada paragraf */
+.kalimat-tentangkami p {
+  font-size: 19.7px;
   text-align: center;
   color: #05181c;
 }
 
+/* Responsif untuk Tablet (Lebar Maksimal 768px) */
 @media (max-width: 768px) {
-  .petikatas {
+  .kalimat-tentangkami {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .petikatas-tentangkami {
     margin-top: -90px;
   }
 
-  .petikbawah {
+  .petikbawah-tentangkami {
     margin-left: 160px;
     margin-top: 20px;
   }
+
+  .kalimat-tentangkami p {
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+  }
 }
 
+/* Responsif untuk Ponsel (Lebar Maksimal 480px) */
 @media (max-width: 480px) {
-  .jasa {
-    flex-direction: column; /* Menumpuk elemen secara vertikal */
-    align-items: center; /* Memusatkan konten */
-    padding: 1rem; /* Mengurangi padding */
+  .jasa-tentangkami {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
   }
 
-  .page4 {
-    flex: 0 0 auto; /* Membuat gambar menyesuaikan lebar */
-    margin-right: 0; /* Menghapus margin kanan */
+  .page4-tentangkami {
+    flex: 0 0 auto;
+    margin-right: 0;
   }
 
-  .page4 img {
-    width: 100%; /* Membuat gambar menyesuaikan lebar kontainer */
-    height: auto; /* Mengatur tinggi gambar agar proporsional */
-    margin-left: 0; /* Menghapus margin kiri */
+  .page4-tentangkami img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
   }
 
-  .petikatas img {
-    margin-left: 0; /* Mengatur margin kiri menjadi nol */
-    margin-top: 10px; /* Menambah jarak atas untuk keterbacaan */
+  .petikatas-tentangkami img {
+    margin-left: 0;
+    margin-top: 10px;
   }
 
-  .petikbawah {
+  .petikbawah-tentangkami {
     margin-left: -120px;
     margin-top: 20px;
   }
 
-  .kalimat p {
-    font-size: 16px; /* Mengurangi ukuran font */
-    padding: 0 10px; /* Memberikan padding samping untuk ruang baca */
+  .kalimat-tentangkami p {
+    font-size: 12px;
+    padding: 0 10px;
     text-align: center;
   }
 }

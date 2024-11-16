@@ -1,28 +1,22 @@
 import React from "react";
 import "./TentangKami.css";
+import HeroTK from "./hero-tentangkami";
 
 class TentangKami extends React.Component {
   render() {
     return (
       <div style={{ fontFamily: "'Open Sans', sans-serif" }}>
-        <div>
-          <section className="hero">
-            <img src="/src/assets/images/bgheader.jpg" alt="background header" />
-            <div className="hero-overlay">
-              <h1>Semua dalam satu solusi mobilitas anda di Jakarta</h1>
-              <p>
-                Kami memberikan kemudahan akses transportasi umum, rental kendaraan, dan layanan driver untuk memastikan
-                perjalanan Anda nyaman dan efisien di Jakarta.
-              </p>
-            </div>
-          </section>
+        <div className="tentangkami">
+          <div className="Hero-TK">
+            <HeroTK />
+          </div>
 
-          <section className="services">
-            <div className="container">
-              <div className="images">
+          <section className="services-tentangkami">
+            <div className="container-tentangkami">
+              <div className="images-tentangkami">
                 <img src="/src/assets/images/page2.png" alt="Gambar transportasi di jakarta" />
               </div>
-              <div className="content">
+              <div className="content-tentangkami">
                 <h2>Teman Setia Perjalanan anda di Jakarta</h2>
                 <p>
                   Kami hadir untuk membantu setiap langkah Anda dengan informasi transportasi yang selalu diperbarui,
@@ -34,9 +28,9 @@ class TentangKami extends React.Component {
             </div>
           </section>
 
-          <section className="features">
-            <h1 className="title">Kenapa Memilih Kami untuk Pengalaman Transportasi Terbaikmu?</h1>
-            <div className="grid">
+          <section className="features-tentangkami">
+            <h1 className="title-tentangkami">Kenapa Memilih Kami untuk Pengalaman Transportasi Terbaikmu?</h1>
+            <div className="grid-tentangkami">
               <div className="card" style={{ backgroundColor: "#F3ECDC" }}>
                 <img
                   style={{ height: "70px", width: "75px" }}
@@ -86,22 +80,22 @@ class TentangKami extends React.Component {
             </div>
           </section>
 
-          <div className="Tujuan">
-            <h1 className="tujuankami">Tujuan Kami</h1>
-            <h2 className="subtitle">
+          <div className="Tujuan-tentangkami">
+            <h1 className="tujuankami-tentangkami">Tujuan Kami</h1>
+            <h2 className="subtitle-tentangkami">
               Menyediakan informasi transportasi dan sewa kendaraan yang mudah diakses untuk memenuhi kebutuhan
               perjalanan Anda!
             </h2>
-            <p className="description">
+            <p className="description-tentangkami">
               Layanan transportasi dan sewa kendaraan terbaik untuk perjalanan Anda. Rasakan pengalaman yang tak
               terlupakan!
             </p>
 
-            <div className="box">
-              <h3 className="box-title">Misi Kami</h3>
+            <div className="box-tentangkami">
+              <h3 className="box-title-tentangkami">Misi Kami</h3>
               <hr />
-              <div className="box-content">
-                <div className="mission-item">
+              <div className="box-content-tentangkami">
+                <div className="mission-item-tentangkami">
                   <div className="mission-number">01</div>
                   <div>
                     <h4 className="mission-title">Menyediakan Informasi Terlengkap</h4>
@@ -132,23 +126,23 @@ class TentangKami extends React.Component {
               </div>
             </div>
 
-            <div className="box">
-              <h3 className="box-title">Visi Kami</h3>
+            <div className="box-tentangkami">
+              <h3 className="box-title-tentangkami">Visi Kami</h3>
               <hr />
-              <p className="box-description">
+              <p className="box-description-tentangkami">
                 Menjadi platform informasi transportasi dan layanan sewa kendaraan terdepan di Jakarta yang memudahkan
                 masyarakat dalam menjalani mobilitas harian dengan aman, nyaman, dan efisien.
               </p>
             </div>
           </div>
 
-          <section className="jasa">
-            <div className="container">
-              <div className="page4">
+          <section className="jasa-tentangkami">
+            <div className="container-tentangkami">
+              <div className="page4-tentangkami">
                 <img src="/src/assets/images/page4.png" alt="Mobil persewaan" />
               </div>
-              <div className="kalimat" style={{ marginTop: "110px" }}>
-                <div className="petikatas">
+              <div className="kalimat-tentangkami" style={{ marginTop: "110px" }}>
+                <div className="petikatas-tentangkami">
                   <img src="/src/assets/images/petikatas.png" alt="Petik atas" />
                 </div>
                 <p>
@@ -156,7 +150,7 @@ class TentangKami extends React.Component {
                   transportasi umum dan pilihan sewa kendaraan yang sesuai dengan kebutuhan Anda. Dengan beberapa klik,
                   perjalanan Anda akan menjadi lebih mudah dan menyenangkan!
                 </p>
-                <div className="petikbawah">
+                <div className="petikbawah-tentangkami">
                   <img src="/src/assets/images/petikbawah.png" alt="Petik bawah" />
                 </div>
               </div>

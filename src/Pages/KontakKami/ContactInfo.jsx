@@ -1,18 +1,18 @@
 import React from "react";
-import "./KontakKami";
+import "./ContactInfo.css";
 
 const ContactInfo = () => {
   return (
-    <div className="contact-info">
-      <div className="contact-info-title">Tetap bersama kami</div>
-      <div className="contact-header-title">Hubungi kami</div>
-      <div className="contact-subtitle">
+    <div className="contact-info-KontakKami">
+      <div className="contact-info-title-KontakKami">Tetap bersama kami</div>
+      <div className="contact-header-title-KontakKami">Hubungi kami</div>
+      <div className="contact-subtitle-KontakKami">
         <p>Jangan ragu untuk meminta konsultasi atau bertanya, langsung saja hubungi kami.</p>
       </div>
 
-      <div className="icon-box">
-        <div className="contact-info-item">
-          <p className="label">
+      <div className="icon-box-KontakKami">
+        <div className="contact-info-item-KontakKami">
+          <p className="label-KontakKami">
             <i className="fas fa-map-marker-alt"></i> {/* Ikon Tempat */}
             Tempat Kami
           </p>
@@ -20,9 +20,9 @@ const ContactInfo = () => {
         </div>
       </div>
 
-      <div className="icon-box">
-        <div className="contact-info-item">
-          <p className="label">
+      <div className="icon-box-KontakKami">
+        <div className="contact-info-item-KontakKami">
+          <p className="label-KontakKami">
             <i className="fas fa-envelope"></i> {/* Ikon Email */}
             Alamat Email
           </p>
@@ -30,9 +30,9 @@ const ContactInfo = () => {
         </div>
       </div>
 
-      <div className="icon-box">
-        <div className="contact-info-item">
-          <p className="label">
+      <div className="icon-box-KontakKami">
+        <div className="contact-info-item-KontakKami">
+          <p className="label-KontakKami">
             <i className="fas fa-phone-alt"></i> {/* Ikon Telepon */}
             Telepon
           </p>

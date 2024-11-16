@@ -16,18 +16,24 @@
 
 /* Left section */
 .register .left {
-  background: linear-gradient(#0b2e34, #235347);
-  color: white;
   flex: 1;
+  background: linear-gradient(var(--primary-10), var(--primary-20));
+  color: var(--textcolor-30);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* padding: 20px; */
+  padding: 0;
+  box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.1);
+  /* Shadow for left side */
 }
 
 .register .left .logo {
-  margin-bottom: 20px;
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  /* Shadow for logo */
 }
 
 /* Right section */
@@ -45,17 +51,26 @@
 .register .right .login-form {
   width: 100%;
   max-width: 400px;
-  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  /* Shadow for form */
+  background-color: #f9f9f9;
 }
 
 .register .right .login-form h2 {
   font-size: 24px;
-  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--textcolor-10);
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
 }
 
 .register .right .login-form p {
   font-size: 14px;
-  color: #666;
+  color: var(--textcolor-50);
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -70,10 +85,16 @@
 .register .right .login-form input[type="password"] {
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  transition: border-color 0.3s;
 }
+
+.register .right .login-form input:focus {
+  border-color: var(--primary-10);
+}
+
 
 /* Styling untuk checkbox dan label yang rata kiri */
 .register .container .right .login-form .checkbox-label {
@@ -82,30 +103,36 @@
   margin-bottom: 20px;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
-  color: var(--textcolor-50); /* Gunakan warna teks yang lebih lembut */
+  color: var(--textcolor-50);
+  /* Gunakan warna teks yang lebih lembut */
 }
 
 .register .container .right .login-form .checkbox-label input {
   margin-top: 0px;
-  margin-right: 15px; /* Memberikan jarak antara checkbox dan label */
-  width: auto; /* Agar lebar checkbox sesuai dengan ukuran aslinya */
+  margin-right: 15px;
+  /* Memberikan jarak antara checkbox dan label */
+  width: auto;
+  /* Agar lebar checkbox sesuai dengan ukuran aslinya */
 }
 
 .register .container .right .login-form .checkbox-label label {
-  margin: 0; /* Menghilangkan margin di label agar lebih rapat */
-  cursor: pointer; /* Menambahkan pointer cursor agar terlihat bisa diklik */
+  margin: 0;
+  /* Menghilangkan margin di label agar lebih rapat */
+  cursor: pointer;
+  /* Menambahkan pointer cursor agar terlihat bisa diklik */
 }
 
 /* Button styles */
 button#registerButton {
   width: 100%;
   padding: 10px;
-  background-color: #235347;
-  color: white;
+  background-color: var(--primary-10);
+  color: var(--textcolor-70);
   border: none;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .register .right .register {
@@ -114,8 +141,15 @@ button#registerButton {
 }
 
 .register .right .register a {
-  color: #235347;
+  color: var(--primary-10);
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.register .right .register a {
+
+  color: var(--primary-20);
 }
 
 /* Google login button */
@@ -128,6 +162,12 @@ button#registerButton {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 5px;
+  transition: box-shadow 0.3s ease;
+}
+
+.register .right .google-login:hover {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  /* Shadow effect for google login on hover */
 }
 
 .register .right .google-login img {

@@ -1,5 +1,4 @@
-/* Navbar.css */
-
+/* Navbar Container */
 .navbar-container {
   background-color: var(--primary-10);
   padding: 14px 41px;
@@ -8,21 +7,40 @@
   align-items: center;
   justify-content: space-between;
   height: 79px;
-  position: relative;
+  position: sticky;
   top: 0;
   z-index: 50;
+}
+
+/* Shadow Effect */
+.navbar-container.shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+
+/* Navbar Logo */
+.navbar-logo {
+  justify-content: flex-start;
+  width: 103px;
+}
+
+.navbar-logo img {
+  max-width: 100%;
+  /* Logo akan menyesuaikan lebar kontainer */
+  height: auto;
+  /* Menjaga proporsi logo */
 }
 
 /* Navbar Links */
 .navbar-links {
   display: flex;
   flex-direction: row;
-  gap: 10px; /* Reduce the gap between items */
-  justify-content: flex-end; /* Align items to start from the left */
+  gap: 49px;
 }
 
 .navbar-item {
-  padding: 4px 5px;
+  padding: 4px 10px;
   border-radius: 25px;
   display: flex;
   align-items: center;
@@ -30,6 +48,24 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Navbar Toggle Button */
+.navbar-toggle {
+  background: var(--primary-10);
+  display: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  /* Position the toggle button at the top right */
+  right: 20px;
+  /* Adjust distance from the right */
+  top: 50%;
+  /* Vertically center the button */
+  transform: translateY(-50%);
+}
+
+/* Navbar Item Text */
 .navbar-item-text {
   font-family: var(--navbar-1-semibold-16-font-family);
   font-size: var(--navbar-1-semibold-16-font-size);
@@ -80,6 +116,7 @@
   color: white;
   background-color: var(--primary);
 }
+
 /* Default: login button outside menu on desktop */
 .login-button {
   background-color: var(--textcolor-30);
@@ -99,70 +136,6 @@
   font-weight: var(--navbar-1-semibold-16-font-weight);
 }
 
-/* Navbar Container */
-.navbar-container {
-  background-color: var(--primary-10);
-  padding: 14px 41px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 79px;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-/* Navbar Logo */
-.navbar-logo {
-  justify-content: flex-start;
-  width: 103px;
-}
-
-.navbar-logo img {
-  max-width: 100%; /* Logo akan menyesuaikan lebar kontainer */
-  height: auto; /* Menjaga proporsi logo */
-}
-
-/* Navbar Links */
-.navbar-links {
-  display: flex;
-  flex-direction: row;
-  gap: 49px;
-}
-
-.navbar-item {
-  padding: 4px 15px;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Navbar Toggle Button */
-.navbar-toggle {
-  background: var(--primary-10);
-  display: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-  position: absolute; /* Position the toggle button at the top right */
-  right: 20px; /* Adjust distance from the right */
-  top: 50%; /* Vertically center the button */
-  transform: translateY(-50%);
-}
-
-/* Navbar Item Text */
-.navbar-item-text {
-  font-family: var(--navbar-1-semibold-16-font-family);
-  font-size: var(--navbar-1-semibold-16-font-size);
-  line-height: var(--navbar-1-semibold-16-line-height);
-  font-weight: var(--navbar-1-semibold-16-font-weight);
-  color: var(--textcolor-30);
-}
-
 /* Mobile and Tablet Styles */
 @media (max-width: 768px) {
   .navbar-logo {
@@ -173,61 +146,118 @@
   }
 
   .navbar-logo img {
-    width: 20%;
-    align-items: center; /* Ukuran logo di layar lebih kecil */
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-items: center;
+    /* Ukuran logo di layar lebih kecil */
   }
 
   .navbar-container {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 10px;
   }
 
-  .navbar-links {
-    background: var(--primary-10);
-    display: none;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar-links.open {
-    display: flex;
-  }
-
-  /* Show toggle button only on mobile/tablet */
+  /* Mengubah ikon toggle menu */
   .navbar-toggle {
+    font-size: 28px;
+    /* Ukuran ikon toggle sedikit lebih kecil di tablet */
     display: block;
   }
 
-  /* Style for menu items in mobile */
-  .navbar-item {
+  /* Mengatur agar navbar links tetap tersembunyi di layar tablet dan dapat discroll */
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    margin-top: 15px;
     width: 100%;
-    padding: 10px;
-    text-align: left;
-  }
-
-  /* Move login button inside menu on mobile */
-  .login-button {
-    width: 100%;
-    margin-top: 10px; /* Add margin to separate it from the menu items */
-  }
-
-  /* Hide login button on desktop */
-  .login-button.desktop-visible {
+    max-height: 70vh;
+    overflow-y: auto;
+    /* Menambahkan scroll jika menu lebih banyak */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-10);
+    /* Menambahkan latar belakang putih untuk menu */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Shadow pada menu dropdown */
+    z-index: 10;
     display: none;
+    transition: all 0.3s ease;
+    /* Transisi untuk menu muncul */
   }
 
-  /* Style the login button in dropdown for tablet/mobile */
-  .login-button {
+  /* Tampilkan menu ketika toggle dibuka */
+  .navbar-links.open {
+    display: block;
+  }
+
+  /* Navbar item dan dropdown */
+  /* Navbar item dan dropdown */
+  .navbar-item {
+    padding: 12px;
     text-align: center;
+    width: 100%;
+    font-size: 18px;
+    color: #333;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar-item-text {
+    font-size: 16px;
+    /* Ukuran font diubah untuk keterbacaan yang lebih baik di tablet */
+    padding: 10px;
+    margin: 0;
+  }
+
+  .dropdown-item {
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Efek hover pada item dropdown */
+  .dropdown-item:hover {
+    background-color: var(--primary-10);
+    /* Latar belakang item dropdown saat hover */
+  }
+
+  .dropdown-menu {
+    position: relative;
+    background-color: var(--primary-10);
+    width: 100%;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    display: none;
+    z-index: 1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Menampilkan dropdown saat menu transportasi umum di hover */
+  .navbar-item:hover .dropdown-menu {
+    display: block;
+  }
+
+  /* Login button */
+  .login-button {
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
   }
 }
 
 /* Extra Small Screens (Mobile) */
 @media (max-width: 480px) {
+
   .navbar-logo {
     width: 100%;
     justify-content: center;
@@ -236,28 +266,35 @@
   }
 
   .navbar-container .navbar-logo img {
-    width: 40%; /* Ukuran logo di layar lebih kecil */
+    width: 40%;
+    /* Ukuran logo di layar lebih kecil */
     justify-content: center;
     align-items: center;
     justify-self: center;
   }
 
   .navbar-toggle {
-    font-size: 30px; /* Larger toggle icon for small screens */
+    font-size: 30px;
+    /* Larger toggle icon for small screens */
   }
 
   .navbar-item-text {
-    font-size: 16px; /* Smaller font size for mobile */
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    /* Smaller font size for mobile */
   }
 }
 
 /* Desktop styles: Ensure login button is visible */
 @media (min-width: 769px) {
   .navbar-toggle {
-    display: none; /* Hide toggle button on desktop */
+    display: none;
+    /* Hide toggle button on desktop */
   }
 
   .login-button.desktop-visible {
-    display: block; /* Show login button on desktop */
+    display: block;
+    /* Show login button on desktop */
   }
 }

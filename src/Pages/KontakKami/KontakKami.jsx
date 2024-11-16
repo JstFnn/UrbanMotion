@@ -8,24 +8,25 @@ import "./../../vars.css";
 
 const KontakKami = () => {
   return (
-    <div className="content">
-      <div className="main-frame">
-        <div className="Heros">
+    <div className="content-KontakKami">
+      <div className="main-frame-KontakKami">
+        <div className="Heros-KontakKami">
           <Hero />
         </div>
-        <div className="card-content">
+        <div className="card-content-KontakKami">
           {/* Bagian kiri: Formulir Kontak */}
-          <div className="left-panel">
+          <div className="left-panel-KontakKami">
             <ContactForm />
           </div>
 
           {/* Bagian kanan: Informasi Kontak */}
-          <div className="right-panel">
+          <div className="right-panel-KontakKami">
             <ContactInfo />
           </div>
         </div>
 
         {/* Widget Google Maps */}
+        <div className="MapWidget-KontakKami"></div>
         <MapWidget />
       </div>
     </div>

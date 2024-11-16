@@ -1,12 +1,12 @@
 import React from "react";
-import "./KontakKami";
+import "./hero.css";
 
-const Hero = ({ className = "" }) => {
+const Hero = ({ className = "hero-KontakKami" }) => {
   return (
-    <div className={`hero-container ${className}`}>
-      <div className="hero-overlay">
-        <div className="hero-content">
-          <div className="hero-text">
+    <div className={`hero-container-KontakKami ${className}`}>
+      <div className="hero-overlay-KontakKami">
+        <div className="hero-content-KontakKami">
+          <div className="hero-text-KontakKami">
             <h1>Siap Berangkat? Hubungi Kami Sekarang!</h1>
             <p>Tanyakan apa saja, kami siap memberikan solusi terbaik untuk Anda.</p>
           </div>
