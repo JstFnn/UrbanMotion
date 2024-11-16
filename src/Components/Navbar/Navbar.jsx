@@ -77,7 +77,7 @@ export const Navbar = ({ className, ...props }) => {
     <div className={`navbar-container ${className} ${hasShadow ? "shadow" : ""}`}>
       {/* Logo navbar */}
       <div className="navbar-logo">
-        <img src="/src/assets/images/logo.png" alt="Logo" /> {/* Menampilkan logo */}
+        <img src="/assets/images/logo.png" alt="Logo" /> {/* Menampilkan logo */}
       </div>
 
       {/* Tombol toggle menu untuk tampilan mobile */}

@@ -1,6 +1,6 @@
 .hero-overlay-TentangKami {
   background: linear-gradient(90deg, rgba(11, 46, 52, 1) 0%, rgba(0, 0, 0, 0.2) 100%),
-    url(./../../assets/images/heross.png);
+    url(/assets/images/bgheader.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -57,6 +57,7 @@
 
 /* Responsive untuk 768px */
 @media (max-width: 768px) {
+
   .hero-overlay-TentangKami {
     padding: 200px 50px;
     /* Kurangi padding */

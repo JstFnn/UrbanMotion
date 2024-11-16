@@ -14,7 +14,7 @@ class TentangKami extends React.Component {
           <section className="services-tentangkami">
             <div className="container-tentangkami">
               <div className="images-tentangkami">
-                <img src="/src/assets/images/page2.png" alt="Gambar transportasi di jakarta" />
+                <img src="/assets/images/page2.png" alt="Gambar transportasi di jakarta" />
               </div>
               <div className="content-tentangkami">
                 <h2>Teman Setia Perjalanan anda di Jakarta</h2>
@@ -32,32 +32,24 @@ class TentangKami extends React.Component {
             <h1 className="title-tentangkami">Kenapa Memilih Kami untuk Pengalaman Transportasi Terbaikmu?</h1>
             <div className="grid-tentangkami">
               <div className="card" style={{ backgroundColor: "#F3ECDC" }}>
-                <img
-                  style={{ height: "70px", width: "75px" }}
-                  src="/src/assets/images/01.png"
-                  alt="Kredible dan akurat"
-                />
+                <img style={{ height: "70px", width: "75px" }} src="/assets/images/01.png" alt="Kredible dan akurat" />
                 <h2 className="card-title">Kredibel dan Akurat</h2>
                 <p className="card-text">Kami memberikan informasi yang kredibel dan akurat untuk perjalananmu.</p>
               </div>
               <div className="card" style={{ backgroundColor: "#F3ECDC" }}>
-                <img style={{ height: "70px", width: "80px" }} src="/src/assets/images/02.png" alt="Layanan Lengkap" />
+                <img style={{ height: "70px", width: "80px" }} src="/assets/images/02.png" alt="Layanan Lengkap" />
                 <h2 className="card-title">Layanan Lengkap</h2>
                 <p className="card-text">Layanan kami mencakup semua kebutuhan transportasi kamu.</p>
               </div>
               <div className="card" style={{ backgroundColor: "#F3ECDC" }}>
-                <img
-                  style={{ height: "70px", width: "80px" }}
-                  src="/src/assets/images/03.png"
-                  alt="Fleksibilitas Paket"
-                />
+                <img style={{ height: "70px", width: "80px" }} src="/assets/images/03.png" alt="Fleksibilitas Paket" />
                 <h2 className="card-title">Fleksibilitas Paket</h2>
                 <p className="card-text">Pilih paket sewa yang sesuai dengan kebutuhan Anda.</p>
               </div>
               <div className="card" style={{ backgroundColor: "#F3ECDC" }}>
                 <img
                   style={{ height: "70px", width: "80px" }}
-                  src="/src/assets/images/04.png"
+                  src="/assets/images/04.png"
                   alt="Dukungan Pelanggan 24/7"
                 />
                 <h2 className="card-title">Dukungan Pelanggan 24/7</h2>
@@ -66,14 +58,14 @@ class TentangKami extends React.Component {
               <div className="card" style={{ backgroundColor: "#F3ECDC" }}>
                 <img
                   style={{ height: "75px", width: "80px" }}
-                  src="/src/assets/images//05.png"
+                  src="/assets/images//05.png"
                   alt="Aplikasi Mudah digunakan"
                 />
                 <h2 className="card-title">Aplikasi Mudah digunakan</h2>
                 <p className="card-text">Aplikasi kami dirancang untuk kemudahan penggunaan.</p>
               </div>
               <div className="card" style={{ backgroundColor: "#F3ECDC" }}>
-                <img style={{ height: "70px", width: "85px" }} src="/src/assets/images/06.png" alt="Harga Bersaing" />
+                <img style={{ height: "70px", width: "85px" }} src="/assets/images/06.png" alt="Harga Bersaing" />
                 <h2 className="card-title">Harga Bersaing</h2>
                 <p className="card-text">Kami menawarkan harga yang kompetitif untuk layanan terbaik.</p>
               </div>
@@ -139,11 +131,11 @@ class TentangKami extends React.Component {
           <section className="jasa-tentangkami">
             <div className="container-tentangkami">
               <div className="page4-tentangkami">
-                <img src="/src/assets/images/page4.png" alt="Mobil persewaan" />
+                <img src="/assets/images/page4.png" alt="Mobil persewaan" />
               </div>
               <div className="kalimat-tentangkami" style={{ marginTop: "110px" }}>
                 <div className="petikatas-tentangkami">
-                  <img src="/src/assets/images/petikatas.png" alt="Petik atas" />
+                  <img src="/assets/images/petikatas.png" alt="Petik atas" />
                 </div>
                 <p>
                   Rasakan perjalanan yang lebih efisien dan nyaman dengan Urban Motion! Dapatkan semua informasi tentang
@@ -151,7 +143,7 @@ class TentangKami extends React.Component {
                   perjalanan Anda akan menjadi lebih mudah dan menyenangkan!
                 </p>
                 <div className="petikbawah-tentangkami">
-                  <img src="/src/assets/images/petikbawah.png" alt="Petik bawah" />
+                  <img src="/assets/images/petikbawah.png" alt="Petik bawah" />
                 </div>
               </div>
             </div>

@@ -11,7 +11,7 @@ class Footer extends React.Component {
       <section className="footer" style={footerStyle}>
         <div className="footer-container">
           <div className="footer-section">
-            <img src="/src/assets/images/logo.png" alt="logo Urban Motion" />
+            <img src="/assets/images/logo.png" alt="logo Urban Motion" />
             <p>
               Website informasi mengenai transportasi umum dan sewa kendaraan dengan layanan profesional di DKI Jakarta.
             </p>

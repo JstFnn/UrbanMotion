@@ -17,7 +17,7 @@ class Login extends React.Component {
       <div className="Login">
         <div className="container">
           <div className="left">
-            <img alt="Webverse Studio Logo" className="logo" src="/src/assets/images/logo.png" />
+            <img alt="Webverse Studio Logo" className="logo" src="/assets/images/logo.png" />
           </div>
           <div className="right">
             <div className="login-form">
@@ -43,7 +43,7 @@ class Login extends React.Component {
 
                 <a href="/dummy">
                   <div className="google-login">
-                    <img alt="Google Logo" height="20" src="/src/assets/images/google.png" width="20" />
+                    <img alt="Google Logo" height="20" src="/assets/images/google.png" width="20" />
                     <span>Masuk dengan Google</span>
                   </div>
                 </a>
@@ -55,7 +55,7 @@ class Login extends React.Component {
         {/* Pop-up */}
         <div className="popup-overlay" id="popupOverlay"></div>
         <div className="popup" id="successPopup">
-          <img src="/src/assets/images/masukBerhasil.png" alt="Gambar Masuk Daftar" />
+          <img src="/public/assets/images/masukBerhasil.png" alt="Gambar Masuk Daftar" />
           <button id="closePopup" onClick={this.closePopup}>
             Tutup
           </button>
