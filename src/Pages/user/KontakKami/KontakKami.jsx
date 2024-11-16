@@ -4,7 +4,7 @@ import ContactInfo from "./ContactInfo";
 import MapWidget from "./MapWidget";
 import Hero from "./hero.jsx";
 import "./KontakKami.css";
-import "./../../vars.css";
+import "./../../../vars.css";
 
 const KontakKami = () => {
   return (

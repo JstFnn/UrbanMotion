@@ -2,10 +2,10 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import { useEffect } from "react"; // Import useEffect
 import { Navbar } from "./Components/Navbar/Navbar.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
-import KontakKami from "./Pages/KontakKami/KontakKami";
-import TentangKami from "./Pages/TentangKami/TentangKami";
-import Login from "./Pages/Login/Login";
-import Register from "./Pages/Register/Register";
+import KontakKami from "./Pages/user/KontakKami/KontakKami";
+import TentangKami from "./Pages/user/TentangKami/TentangKami";
+import Login from "./Pages/auth/Login/Login";
+import Register from "./Pages/auth/Register/Register";
 import "./styles.css";
 
 function AppContent() {
