@@ -1,19 +1,15 @@
 /* Global Box Sizing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 /* Kontainer utama */
 .content-KontakKami {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  /* Center konten */
+  /* max-width: 1200px; */
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 60px;
+  margin-right: 60px
 }
 
 .main-frame-KontakKami {
@@ -138,77 +134,63 @@
 }
 
 
-
-/* Media Query untuk ukuran layar 768px dan 480px */
+/* Media Query untuk ukuran layar 768px dan lebih kecil */
 @media (max-width: 768px) {
   .Heros-KontakKami {
-    margin-bottom: 450px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 900px;
+  }
+
+  .content-KontakKami {
+    margin: 50px;
+    /* Kurangi margin agar tidak terlalu lebar */
   }
 
   .card-content-KontakKami {
-
-    margin-top: 700px;
-    /* Menumpuk panel menjadi vertikal */
-    gap: 40px;
-    /* Menambah jarak antar panel */
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Menempatkan panel di tengah secara horisontal */
     justify-content: center;
-    /* Menempatkan panel di tengah secara vertikal */
-    margin-top: 50px;
-    /* Mengurangi margin atas untuk menyesuaikan */
+    gap: 50px;
     width: 100%;
   }
 
   .right-panel-KontakKami,
   .left-panel-KontakKami {
     flex: 1 1 100%;
-    /* Panel menjadi lebar penuh pada ukuran layar kecil */
-    max-width: 400px;
-    /* Batasi lebar panel pada ukuran layar kecil */
-    height: auto;
-    /* Sesuaikan tinggi panel agar tidak terlalu besar */
+    max-width: 100%;
+    padding: 20px;
   }
-
-  .map-widget-KontakKami {
-    width: 100%;
-  }
-
 }
 
+/* Media Query untuk ukuran layar 480px dan lebih kecil */
 @media (max-width: 480px) {
-
   .Heros-KontakKami {
-    margin-bottom: 150px;
+    margin-bottom: 800px;
+    width: 100%;
+    height: auto;
+
+  }
+
+  .content-KontakKami {
+    margin: 20px;
   }
 
   .card-content-KontakKami {
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Menempatkan panel di tengah secara horisontal */
     justify-content: center;
-    /* Menempatkan panel di tengah secara vertikal */
-    margin-top: 50px;
-    /* Mengurangi margin atas untuk menyesuaikan */
+    gap: 30px;
     width: 100%;
-    margin-top: 0px;
-    gap: 40px;
-    /* Menambah jarak antar panel */
   }
 
   .right-panel-KontakKami,
   .left-panel-KontakKami {
     flex: 1 1 100%;
-    /* Panel menjadi lebar penuh pada ukuran layar sangat kecil */
-    max-width: 300px;
-    /* Batasi lebar panel pada ukuran layar lebih kecil */
-    height: auto;
-    /* Sesuaikan tinggi panel agar tidak terlalu besar */
+    max-width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
   }
-
 }

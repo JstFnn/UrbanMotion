@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Profil } from "../Profil/Profil.jsx"; // Komponen profil yang sudah dibuat
 import "./Navbar.css"; // Impor file CSS untuk gaya Navbar
 
 export const Navbar = ({ className, ...props }) => {
@@ -19,6 +18,12 @@ export const Navbar = ({ className, ...props }) => {
     const handleScroll = () => {
       setHasShadow(window.scrollY > 10); // Shadow aktif jika pengguna scroll lebih dari 10px
     };
+
+    // Cek status login saat komponen pertama kali dimuat
+    const loggedInStatus = localStorage.getItem("isLoggedIn");
+    if (loggedInStatus) {
+      setIsLoggedIn(true); // Jika sudah login, set status login ke true
+    }
 
     // Tambahkan listener saat komponen mount
     window.addEventListener("scroll", handleScroll);
@@ -126,8 +131,17 @@ export const Navbar = ({ className, ...props }) => {
         ))}
 
         {/* Tombol login atau profil */}
-        <div className={`login-button ${isLoggedIn ? "desktop-visible" : ""}`} onClick={handleLoginClick}>
-          <span className="login-button-text">{isLoggedIn ? "Profil" : "Login"}</span> {/* Teks tombol */}
+        <div
+          className={`login-button ${isLoggedIn ? "desktop-visible" : ""}`}
+          onClick={isLoggedIn ? handleProfileClick : handleLoginClick}>
+          {/* Tampilkan ikon profil jika sudah login */}
+          {isLoggedIn ? (
+            <>
+              <i className="fas fa-user-circle"></i> {/* Ikon profil */}
+            </>
+          ) : (
+            <span className="login-button-text">Login</span> // Teks tombol login
+          )}
         </div>
       </div>
     </div>

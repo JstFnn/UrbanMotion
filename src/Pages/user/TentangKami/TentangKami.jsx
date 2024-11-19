@@ -129,25 +129,28 @@ class TentangKami extends React.Component {
           </div>
 
           <section className="jasa-tentangkami">
-            <div className="container-tentangkami">
-              <div className="page4-tentangkami">
-                <img src="/assets/images/page4.png" alt="Mobil persewaan" />
-              </div>
-              <div className="kalimat-tentangkami" style={{ marginTop: "110px" }}>
-                <div className="petikatas-tentangkami">
-                  <img src="/assets/images/petikatas.png" alt="Petik atas" />
-                </div>
-                <p>
-                  Rasakan perjalanan yang lebih efisien dan nyaman dengan Urban Motion! Dapatkan semua informasi tentang
-                  transportasi umum dan pilihan sewa kendaraan yang sesuai dengan kebutuhan Anda. Dengan beberapa klik,
-                  perjalanan Anda akan menjadi lebih mudah dan menyenangkan!
-                </p>
-                <div className="petikbawah-tentangkami">
-                  <img src="/assets/images/petikbawah.png" alt="Petik bawah" />
-                </div>
-              </div>
-            </div>
-          </section>
+  <div className="container-tentangkami">
+    <div className="content-page4-tentangkami">
+      <div className="page4-tentangkami">
+        <img src="/assets/images/page4.png" alt="Mobil persewaan" />
+      </div>
+      <div className="kalimat-tentangkami">
+        <div className="petikatas-tentangkami">
+          <img src="/assets/images/petikatas.png" alt="Petik atas" />
+        </div>
+        <p>
+          Rasakan perjalanan yang lebih efisien dan nyaman dengan Urban Motion! Dapatkan semua informasi tentang
+          transportasi umum dan pilihan sewa kendaraan yang sesuai dengan kebutuhan Anda. Dengan beberapa klik,
+          perjalanan Anda akan menjadi lebih mudah dan menyenangkan!
+        </p>
+        <div className="petikbawah-tentangkami">
+          <img src="/assets/images/petikbawah.png" alt="Petik bawah" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
         </div>
       </div>
     );

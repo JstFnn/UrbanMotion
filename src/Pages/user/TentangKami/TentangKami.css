@@ -55,6 +55,44 @@
   color: #05181c;
 }
 
+.content-page4-tentangkami {
+  display: flex;
+  align-items: center;
+  /* Vertikal tengah */
+  gap: 2rem;
+  /* Jarak antara gambar dan teks */
+}
+
+.page4-tentangkami {
+  flex: 1;
+  /* Menjadikan elemen fleksibel */
+}
+
+.page4-tentangkami img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  /* Opsional */
+}
+
+.kalimat-tentangkami {
+  flex: 1;
+  /* Menjadikan teks fleksibel */
+  text-align: justify;
+}
+
+.petikatas-tentangkami,
+.petikbawah-tentangkami {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* .page4-tentangkami img{
+  align-items : center ;
+  justify-content: center;
+} */
+
+
 /* Responsif untuk Tablet (Lebar Maksimal 992px) */
 @media (max-width: 768px) {
   .Hero-TK {

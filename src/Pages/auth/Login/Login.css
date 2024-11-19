@@ -1,8 +1,7 @@
 /* Container and Flex Layout */
 .Login {
-  margin: 0;
   padding: 0;
-  display: flex;
+  margin: 0;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -12,16 +11,19 @@
 
 /* Main container */
 .Login .container {
-
-  margin-left: -120px;
-  margin-right: 0px;
   display: flex;
-  width: 100%;
+  width: 100vw;
   height: 100%;
+  font-family: "Open Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  gap: 50px;
 }
 
 /* Left Section */
 .Login .container .left {
+
   flex: 1;
   background: linear-gradient(var(--primary-10), var(--primary-20));
   color: var(--textcolor-30);
@@ -30,11 +32,10 @@
   align-items: center;
   padding: 0;
   box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.1);
-  /* Shadow for left side */
 }
 
 .Login .container .left .logo {
-  width: 80%;
+  width: 60%;
   max-width: 600px;
   height: auto;
   border-radius: 10px;

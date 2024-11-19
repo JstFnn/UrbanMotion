@@ -6,7 +6,7 @@
 
 .register .container {
   display: flex;
-  width: 200vw;
+  width: 100vw;
   height: 100%;
   font-family: "Open Sans", sans-serif;
   padding: 0;
@@ -28,7 +28,7 @@
 }
 
 .register .left .logo {
-  width: 80%;
+  width: 60%;
   max-width: 600px;
   height: auto;
   border-radius: 10px;
