@@ -43,6 +43,22 @@
   /* Shadow for logo */
 }
 
+
+.close-icon {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 1.5rem;
+  color: var(--primary-10);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-icon:hover {
+  color: #ff0000;
+  /* Ganti warna menjadi merah saat dihover */
+}
+
 /* Right Section */
 .Login .container .right {
   flex: 1;

@@ -7,22 +7,27 @@ import Footer from "./Components/Footer/Footer.jsx";
 import Sidebar from "./Pages/admin/componen/Sidebar/sidebar.jsx";
 
 // USER PAGES
+// import Home from "./Pages/user/Beranda/home.jsx";
 import KontakKami from "./Pages/user/KontakKami/KontakKami";
 import TentangKami from "./Pages/user/TentangKami/TentangKami";
 import Login from "./Pages/auth/Login/Login";
 import Register from "./Pages/auth/Register/Register";
 import MyAccount from "./Pages/user/MyAccount/MyAccount.jsx";
+// import Myhistory from "./Pages/user/Histori/histori.jsx";
 
 // Admin PAGES
 
 import DashboardAdmin from "./Pages/admin/page/dashboardAdmin/dashboardAdmin.jsx";
-import ProductsPage from "./Pages/admin/page/produkAdmin/prdoukAdmin.jsx";
+import ProductsPage from "./Pages/admin/page/produkAdmin/productRead/prdoukAdmin.jsx";
+import ProductDetailPage from "./Pages/admin/page/produkAdmin/productDetailEdit/productDetailPage.jsx";
+import ProductsEditPage from "./Pages/admin/page/produkAdmin/productEdit/productEditPage.jsx";
 
 // 404 PAGES
 import NotFoundPage from "./Pages/404/notFound.jsx";
 
 // CSS
 import "./styles.css";
+import ProductsAddPage from "./Pages/admin/page/produkAdmin/productAdd/productAddPage.jsx";
 
 function AppContent() {
   const location = useLocation();
@@ -36,6 +41,7 @@ function AppContent() {
   useEffect(() => {
     // Update document title based on the current route
     const pageTitleMap = {
+      // user
       "/": "Beranda - Urban Motion",
       "/tentang-kami": "Tentang Kami - Urban Motion",
       "/transportasi-umum/peta": "Peta - Urban Motion",
@@ -46,6 +52,17 @@ function AppContent() {
       "/kontak": "Kontak Kami - Urban Motion",
       "/login": "Login - Urban Motion",
       "/register": "Register - Urban Motion",
+      "/my-account": "Profil - Urban Motion",
+      "/my-history": "Histori - Urban Motion",
+
+      // admin
+
+      "/admin/dashboard": "Dashboard - Urban Motion",
+      "/admin/product": "Product - Urban Motion",
+      "/admin/product-detail/:id": "Detail Product - Urban Motion",
+      "/admin/product/add": "Tambah Produk - Urban Motion",
+      "/admin/product-edit/:id": "Edit Produk- Urban Motion",
+      "/admin/product-delete/:id": "Delete Produk - Urban Motion",
     };
 
     // Set the document title based on the current path
@@ -59,18 +76,25 @@ function AppContent() {
         {isAdminPage && <Sidebar />} {/* Tampilkan Sidebar jika halaman admin */}
         <div className={`content-area ${isAdminPage ? "admin-content" : ""}`}>
           <Routes>
-            <Route path="/" element={<div>Home Page</div>} />
+            {/* User */}
+            <Route path="/" element={<div>Home</div>} />
             <Route path="/tentang-kami" element={<TentangKami />} />
             <Route path="/transportasi-umum" element={<div>Transportasi Umum</div>} />
             <Route path="/sewa" element={<div>Sewa </div>} />
             <Route path="/daftar-harga" element={<div>Daftar Harga </div>} />
             <Route path="/kontak" element={<KontakKami />} />
             <Route path="/my-account" element={<MyAccount />} />
+            <Route path="/my-history" element={<div>Transportasi Umum</div>} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
 
+            {/* Admin */}
             <Route path="/admin/dashboard" element={<DashboardAdmin />} />
             <Route path="/admin/product" element={<ProductsPage />} />
+            <Route path="/admin/product-detail/:id" element={<ProductDetailPage />} />
+            <Route path="/admin/product/add" element={<ProductsAddPage />} />
+            <Route path="/admin/product-edit/:id" element={<ProductsEditPage />} />
+            <Route path="/admin/product-delete/:id" element={<div>DELETE</div>} />
 
             <Route path="/dummy" element={<div>Lorem Ipsum</div>} />
             <Route path="*" element={<NotFoundPage />} />

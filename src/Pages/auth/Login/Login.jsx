@@ -68,6 +68,9 @@ const Login = () => {
         </div>
         <div className="right">
           <div className="login-form">
+            {/* Ikon Silang */}
+            <i className="fa fa-times close-icon" onClick={() => navigate("/")} title="Tutup"></i>
+
             <h2>Masuk</h2>
             <p>Masuk untuk mengakses akun Urban Motion anda.</p>
 

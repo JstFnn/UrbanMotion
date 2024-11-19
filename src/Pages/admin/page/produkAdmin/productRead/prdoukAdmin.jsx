@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
-import HeaderAdmin from "../../componen/Header/headerAdmin";
-import StatCard from "../../componen/Statcard/statcard";
+import HeaderAdmin from "../../../componen/Header/headerAdmin";
+import StatCard from "../../../componen/Statcard/statcard";
+import ButtonCRUD from "../../../componen/button/buttonCRUD";
 
 import { AlertTriangle, DollarSign, Package, TrendingUp } from "lucide-react";
-import CategoryDistributionChart from "../../componen/overview/CategoryDistributionChart";
-import SalesTrendChart from "../../componen/products/SalesTrendChart";
-import ProductsTable from "../../componen/products/ProductsTable";
+
+import ProductsTable from "../../../componen/products/read/ProductsTable";
 
 const ProductsPage = () => {
   return (
@@ -25,14 +25,10 @@ const ProductsPage = () => {
           <StatCard name="Low Stock" icon={AlertTriangle} value={23} color="#F59E0B" />
           <StatCard name="Total Revenue" icon={DollarSign} value={"$543,210"} color="#EF4444" />
         </motion.div>
-
-        <ProductsTable />
-
-        {/* CHARTS */}
-        <div className="grid grid-col-1 lg:grid-cols-2 gap-8">
-          <SalesTrendChart />
-          <CategoryDistributionChart />
+        <div className="space-x-2 mb-4">
+          <ButtonCRUD action="add" />
         </div>
+        <ProductsTable />
       </main>
     </div>
   );

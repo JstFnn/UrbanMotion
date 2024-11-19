@@ -315,92 +315,100 @@
 
 /* Jasa Section */
 .jasa-tentangkami {
+  margin-left: 50px;
+  margin-right: 50px;
   display: flex;
   align-items: flex-start;
   padding: 2rem;
   box-sizing: border-box;
+  flex-wrap: wrap;
+  /* Agar elemen turun jika ruang tidak cukup */
 }
 
 .page4-tentangkami {
-  flex: 0 0 250px;
   margin-right: 2rem;
 }
 
 .page4-tentangkami img {
   margin-left: 20px;
-  width: 100%;
-  max-width: 600px;
-  height: auto;
+  width: 600px;
+  height: 500px;
+  /* Memastikan gambar tetap proporsional */
+}
+
+.petikatas-tentangkami {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+}
+
+.petikbawah-tentangkami {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
 }
 
 .petikatas-tentangkami img,
 .petikbawah-tentangkami img {
   width: 50px;
   height: 40px;
-  margin-bottom: 10px;
+}
+
+.kalimat-tentangkami {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
 }
 
 .kalimat-tentangkami p {
   font-size: 19.7px;
   text-align: center;
   color: #05181c;
+  margin: 2rem 0;
 }
 
-/* Responsif untuk Tablet (Lebar Maksimal 768px) */
+/* Responsif untuk layar <= 768px */
 @media (max-width: 768px) {
-  .kalimat-tentangkami {
-    margin: 10px;
-    padding: 15px;
-  }
-
-  .petikatas-tentangkami {
-    margin-top: -90px;
-  }
-
-  .petikbawah-tentangkami {
-    margin-left: 160px;
-    margin-top: 20px;
-  }
-
-  .kalimat-tentangkami p {
-    font-size: 14px;
-    padding: 10px;
-    text-align: center;
-  }
-}
-
-/* Responsif untuk Ponsel (Lebar Maksimal 480px) */
-@media (max-width: 480px) {
   .jasa-tentangkami {
     flex-direction: column;
+    /* Ubah flex menjadi kolom */
     align-items: center;
-    padding: 1rem;
+    /* Pusatkan elemen */
   }
 
   .page4-tentangkami {
-    flex: 0 0 auto;
     margin-right: 0;
+    margin-bottom: 1.5rem;
+    /* Beri jarak antara gambar dan teks */
   }
 
   .page4-tentangkami img {
     width: 100%;
+    /* Sesuaikan gambar dengan lebar container */
     height: auto;
+    /* Biarkan tinggi menyesuaikan */
     margin-left: 0;
+    /* Hilangkan margin kiri */
   }
+}
 
-  .petikatas-tentangkami img {
-    margin-left: 0;
-    margin-top: 10px;
-  }
-
-  .petikbawah-tentangkami {
-    margin-left: -120px;
-    margin-top: 20px;
-  }
-
+/* Responsif untuk layar <= 480px */
+@media (max-width: 480px) {
   .kalimat-tentangkami p {
-    font-size: 12px;
-    padding: 0 10px;
-    text-align: center;
+    font-size: 16px;
+    /* Perkecil font untuk layar kecil */
+    padding: 1rem;
+  }
+
+  .page4-tentangkami img {
+    width: 100%;
+    /* Maksimalkan lebar gambar */
+    height: auto;
+    /* Biarkan tinggi menyesuaikan */
+  }
+
+  .kalimat-tentangkami {
+    padding: 1rem;
+    /* Kurangi padding */
   }
 }

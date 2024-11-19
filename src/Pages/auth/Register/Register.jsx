@@ -21,6 +21,7 @@ class Register extends React.Component {
           </div>
           <div className="right">
             <div className="login-form">
+              <i className="fa fa-times close-icon" onClick={() => navigate("/")} title="Tutup"></i>
               <h2>Daftar</h2>
               <p>Daftar untuk mengakses akun Urban Motion anda.</p>
               <label htmlFor="username">Nama Pengguna</label>
