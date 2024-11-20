@@ -69,7 +69,7 @@ const MyAccount = () => {
           <div className="lg:w-1/3">
             <div className="bg-primary-10 shadow-md rounded-lg p-6 text-center">
               <img
-                src="/assets/images/windah.png"
+                src="./public/assets/images/windah.jpg"
                 alt="Profile Picture"
                 className="rounded-full w-32 h-32 mx-auto mb-4"
               />

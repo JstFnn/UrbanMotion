@@ -96,7 +96,7 @@
 /* Responsif untuk Tablet (Lebar Maksimal 992px) */
 @media (max-width: 768px) {
   .Hero-TK {
-    margin: 0;
+    margin: -220px;
   }
 
   .services-tentangkami {
@@ -180,9 +180,10 @@
   padding: 0 100px;
 }
 
-.card {
+.cardtentangkami {
   padding: 20px;
   border-radius: 8px;
+  width: 350px !important;
 }
 
 .card-title {
@@ -203,7 +204,7 @@
     font-size: 32px;
   }
 
-  .card img {
+  .cardtentangkami img {
     width: 60px;
     height: 60px;
   }
@@ -227,7 +228,7 @@
     font-size: 20px;
   }
 
-  .card img {
+  .cardtentangkami img {
     width: 50px;
     height: 50px;
   }

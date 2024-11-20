@@ -1,68 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family:'Open Sans', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  
-    margin: 0;
-    background-color: #f7f9f9;
-    
-   
-    
+
+  margin: 0;
+  background-color: #f7f9f9;
+
 }
 
 
-
-/* Hero Section */
-.hero {
-  position: relative;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #f8f3ed;
-  padding-left: 100px;
-  padding-right: 650px;
-  box-sizing: border-box; 
-}
-
-.hero h1 {
-  margin-top: 0px;
-  font-size: 55px;
-  font-weight: bold;
-}
-
-.hero p {
-  font-size: 18px;
-  letter-spacing: 0.5px; /*ngasih spasi*/
-}
-
-.carousel-indicators{
-  margin-top: 20px; /* Ruang di atas */
-  padding-top: 10px; 
-}
 .button-wrapper {
   display: flex;
-  justify-content: center; 
-  align-items: center;      
-  height: 100vh;            
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   transform: translateY(300px);
 }
 
@@ -84,21 +41,58 @@ body {
   transform: translateY(-300px)
 } */
 
+/* Wrapper utama */
+
+.isi-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Konten di tengah secara horizontal */
+  justify-content: center;
+  /* Konten di tengah secara vertikal */
+  width: 100%;
+
+  /* Margin kiri dan kanan seimbang */
+  box-sizing: border-box;
+}
+
+/* Carousel: Full layar */
+/* .carousel-container {
+  border: 2px solid red;
+  width: 100%;
+  height: 60vh; */
+/* Membatasi tinggi carousel menjadi 60% layar */
+/* } */
+
+/* .carousel-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+} */
+
+.carousel-contentt {
+  width: 1240px;
+  height: 400px;
+  z-index: 0;
+}
+
 .isi {
+
   width: 100%;
   height: auto;
   max-width: 1120px;
   text-align: center;
-  margin-top: 50px;  
+  margin-top: 50px;
   margin-bottom: 50px;
   padding: 20px 60px 60px 60px;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
 
-  
+
 }
 
 .vehicle-header h2 {
@@ -116,16 +110,17 @@ body {
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 160%; /* 28.8px */
+  line-height: 160%;
+  /* 28.8px */
   letter-spacing: -0.36px;
-  margin-bottom: 41px;    
+  margin-bottom: 41px;
 }
 
 .vehicle-cards {
   display: flex;
   gap: 15px;
   justify-content: center;
-        
+
 }
 
 .card {
@@ -138,7 +133,7 @@ body {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.card img {    
+.card img {
   height: 116px;
   width: 100%;
   border-radius: 8px;
@@ -163,8 +158,8 @@ body {
   justify-content: space-between;
   margin: 8px 0;
   color: #666;
-  list-style: none;   
-  padding: 0; 
+  list-style: none;
+  padding: 0;
 }
 
 .card .features li {
@@ -179,31 +174,64 @@ body {
 .price {
   margin-top: 30px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  color: #666;
   font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  /* Font bersih dan profesional */
+  color: #333;
+  /* Warna teks netral untuk visibilitas */
 }
 
 .price span {
   display: inline-block;
+  line-height: 1.5;
+  /* Tinggi garis agar lebih proporsional */
 }
 
 .price .price-label {
   flex-grow: 1;
+  /* Ambil ruang maksimal untuk label */
+  font-weight: 500;
+  /* Tebal sedang untuk penekanan */
+  color: #666;
+  /* Warna abu-abu untuk label */
 }
 
 .price .price-value {
   display: flex;
-  justify-content: flex-end;
+  align-items: baseline;
+  /* Selaraskan harga dan durasi */
+  font-size: 18px;
+  /* Ukuran lebih besar untuk menarik perhatian */
+  font-weight: 600;
+  /* Tebal untuk penekanan */
+  color: var(--primary-10);
+  /* Gunakan warna utama dari tema */
 }
 
 .price .price-duration {
   margin-left: 5px;
+  /* Jarak kecil untuk keterbacaan */
+  font-size: 14px;
+  /* Ukuran lebih kecil untuk menunjukkan sekunder */
+  font-weight: 400;
+  /* Bobot reguler */
+  color: #888;
+  /* Warna netral untuk teks tambahan */
 }
 
 .price strong {
+  font-size: 15px;
+  /* Ukuran besar untuk menarik perhatian */
+  line-height: 1.2;
+  /* Tinggi garis yang lebih rapat */
   font-weight: bold;
+  /* Menonjolkan angka harga */
+  font-style: normal;
+  /* Normal agar tetap profesional */
+  color: var(--primary-10);
+  /* Warna konsisten dengan tema */
 }
 
 
@@ -223,10 +251,10 @@ body {
 }
 
 .rent-button a {
-    text-decoration: none;  
-    color: inherit;         
-    outline: none;          
-  }
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
 
 .rent-button:hover {
   background-color: #003831;
@@ -236,12 +264,12 @@ body {
 .waves {
   position: relative;
   width: 100%;
-  height: auto; 
-  overflow: hidden; 
+  height: auto;
+  overflow: hidden;
 }
 
 .waves img {
-  width: 100%; 
-  height: auto; 
-  display: block; 
+  width: 100%;
+  height: auto;
+  display: block;
 }

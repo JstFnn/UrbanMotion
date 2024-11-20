@@ -43,6 +43,22 @@
   /* Shadow for logo */
 }
 
+/* Style for error message */
+.error-message {
+  color: #d9534f;
+  /* Red color to indicate error */
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #f2dede;
+  /* Light red background */
+  border-radius: 5px;
+  border: 1px solid #d9534f;
+  /* Red border */
+  text-align: center;
+}
+
 
 .close-icon {
   position: absolute;
@@ -156,6 +172,7 @@
 }
 
 .Login .container .right .login-form .checkbox-label label {
+  margin-bottom: 12px;
   cursor: pointer;
 }
 

@@ -14,7 +14,7 @@ import TentangKami from "./Pages/user/TentangKami/TentangKami";
 import Login from "./Pages/auth/Login/Login";
 import Register from "./Pages/auth/Register/Register";
 import MyAccount from "./Pages/user/MyAccount/MyAccount.jsx";
-import Myhistory from "./Pages/user/MyHistory/hostori.jsx";
+import Myhistory from "./Pages/user/MyHistory/histori.jsx";
 import Krl from "./Pages/user/Krl/Krl.jsx";
 import Tj from "./Pages/user/Tj/Tj.jsx";
 import MrtLrt from "./Pages/user/Mrt&Lrt/MrtLrt.jsx";

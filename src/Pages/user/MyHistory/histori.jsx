@@ -26,16 +26,20 @@ const Myhistory = () => {
 
       {/* Container */}
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap lg:flex-nowrap gap-8">
+        <div className="flex flex-wrap lg:flex-nowrap gap-4">
           {/* Profil Section */}
           <div className="lg:w-1/3">
             <div className="bg-primary-10 shadow-md rounded-lg p-6 text-center">
               <img
-                src="/assets/images/windah.png"
+                src="./public/assets/images/windah.jpg"
                 alt="Profile Picture"
                 className="rounded-full w-32 h-32 mx-auto mb-4"
               />
-              <h2 className="text-lg text-secondary-30 font-semibold">Profil Saya</h2>
+              <a
+                href="/my-account"
+                className="bg-primary-20 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition inline-block text-center">
+                Profil Saya
+              </a>
               <h4 className="text-lg text-secondary-30 font-semibold">Budiman</h4>
               <p className="text-secondary-30 mb-4">budiman@gmail.com</p>
 

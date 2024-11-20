@@ -1,58 +1,60 @@
 import React from "react";
 import "./PriceList.css";
+import Carousel from "./carouselPL";
+
 // Component untuk Carousel
-const Carousel = () => {
-  return (
-    <div id="carouselExampleCaptions" className="carousel slide">
-      {/* <div className="carousel-indicators">
-        {[...Array(4)].map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to={index}
-            className={index === 0 ? 'active' : ''}
-            aria-current={index === 0 ? 'true' : undefined}
-            aria-label={`Slide ${index + 1}`}
-          ></button>
-        ))}
-      </div> */}
-      <div className="carousel-inner">
-        {[
-          { imgSrc: "image/img-pricelist/slider mobil - toyota fortuner.png", alt: "Toyota Fortuner" },
-          { imgSrc: "image/img-pricelist/slider mobil - honda crv.png", alt: "Honda CRV" },
-          { imgSrc: "image/img-pricelist/slider mobil - toyota avanza.png", alt: "Toyota Avanza" },
-          { imgSrc: "image/img-pricelist/slider mobil - toyota alpard.png", alt: "Toyota Alpard" },
-        ].map((slide, index) => (
-          <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-            <img src={slide.imgSrc} className="d-block w-100" alt={slide.alt} />
-            <div className="carousel-caption d-none d-md-block">
-              <div className="button-wrapper">
-                <button className="c-button">Sewa</button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
-    </div>
-  );
-};
+// const Carousel = () => {
+//   return (
+//     <div id="carouselExampleCaptions" className="carousel slide">
+//       {/* <div className="carousel-indicators">
+//         {[...Array(4)].map((_, index) => (
+//           <button
+//             key={index}
+//             type="button"
+//             data-bs-target="#carouselExampleCaptions"
+//             data-bs-slide-to={index}
+//             className={index === 0 ? 'active' : ''}
+//             aria-current={index === 0 ? 'true' : undefined}
+//             aria-label={`Slide ${index + 1}`}
+//           ></button>
+//         ))}
+//       </div> */}
+//       <div className="carousel-inner">
+//         {[
+//           { imgSrc: "/assets/images/img//slider mobil - toyota fortuner.png", alt: "Toyota Fortuner" },
+//           { imgSrc: "/assets/images/img//slider mobil - honda crv.png", alt: "Honda CRV" },
+//           { imgSrc: "/assets/images/img//slider mobil - toyota avanza.png", alt: "Toyota Avanza" },
+//           { imgSrc: "/assets/images/img//slider mobil - toyota alpard.png", alt: "Toyota Alpard" },
+//         ].map((slide, index) => (
+//           <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+//             <img src={slide.imgSrc} className="d-block w-100" alt={slide.alt} />
+//             <div className="carousel-caption d-none d-md-block">
+//               <div className="button-wrapper">
+//                 <button className="c-button">Sewa</button>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//       <button
+//         className="carousel-control-prev"
+//         type="button"
+//         data-bs-target="#carouselExampleCaptions"
+//         data-bs-slide="prev">
+//         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+//         <span className="visually-hidden">Previous</span>
+//       </button>
+//       <button
+//         className="carousel-control-next"
+//         type="button"
+//         data-bs-target="#carouselExampleCaptions"
+//         data-bs-slide="next">
+//         <span className="carousel-control-next-icon" aria-hidden="true"></span>
+//         <span className="visually-hidden">Next</span>
+//       </button>
+//     </div>
+//   );
+// };
 
 // Car data to be displayed in cards
 const vehicles = {
@@ -65,7 +67,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 400000,
-      imageUrl: "image/img-pricelist/toyota-avanza, Property 2=black.png",
+      imageUrl: "/assets/images/img//toyota-avanza, Property 2=black.png",
     },
     {
       name: "Mitsubisi Xpander",
@@ -75,7 +77,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 450000,
-      imageUrl: "image/img-pricelist/misubisi-expander, Property 2=gray.png",
+      imageUrl: "/assets/images/img//misubisi-expander, Property 2=gray.png",
     },
     {
       name: "Suzuki Ertiga",
@@ -85,7 +87,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 400000,
-      imageUrl: "image/img-pricelist/suzuki-ertiga, Property 2=04.png",
+      imageUrl: "/assets/images/img//suzuki-ertiga, Property 2=04.png",
     },
     {
       name: "Daihatsu Xenia",
@@ -95,7 +97,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 400000,
-      imageUrl: "image/img-pricelist/daihatsu-sirion, Property 2=01.png",
+      imageUrl: "/assets/images/img//daihatsu-sirion, Property 2=01.png",
     },
   ],
   cityCar: [
@@ -107,7 +109,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 400000,
-      imageUrl: "image/img-pricelist/honda-crv, Property 2=02.png",
+      imageUrl: "/assets/images/img//honda-crv, Property 2=02.png",
     },
     {
       name: "Suzuki Ignis",
@@ -117,7 +119,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 350000,
-      imageUrl: "image/img-pricelist/suzuki-ignis, 01.png",
+      imageUrl: "/assets/images/img//suzuki-ignis, 01.png",
     },
     {
       name: "Daihatsu Sirion",
@@ -127,7 +129,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 350000,
-      imageUrl: "image/img-pricelist/daihatsu-sirion, Property 2=01.png",
+      imageUrl: "/assets/images/img//daihatsu-sirion, Property 2=01.png",
     },
     {
       name: "Honda Brio",
@@ -137,7 +139,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 350000,
-      imageUrl: "image/img-pricelist/honda-brio, Property 2=04.png",
+      imageUrl: "/assets/images/img//honda-brio, Property 2=04.png",
     },
   ],
   luxuryCar: [
@@ -149,7 +151,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 1000000,
-      imageUrl: "image/img-pricelist/lexus lm, Property 2=gray.png",
+      imageUrl: "/assets/images/img//lexus lm, Property 2=gray.png",
     },
     {
       name: "Toyota Alpard",
@@ -159,7 +161,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 1000000,
-      imageUrl: "image/img-pricelist/toyota-alpard, Property 2=01.png",
+      imageUrl: "/assets/images/img//toyota-alpard, Property 2=01.png",
     },
     {
       name: "Mercedes Benz",
@@ -169,7 +171,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 1000000,
-      imageUrl: "image/img-pricelist/Mercedes-Benz S-Class.png",
+      imageUrl: "/assets/images/img//Mercedes-Benz S-Class.png",
     },
     {
       name: "BMW 7 Series",
@@ -179,7 +181,7 @@ const vehicles = {
       airConditioner: true,
       doors: 4,
       price: 1000000,
-      imageUrl: "image/img-pricelist/bmw i7, Property 2=black.png",
+      imageUrl: "/assets/images/img//bmw i7, Property 2=black.png",
     },
   ],
   twoWheelers: [
@@ -191,7 +193,7 @@ const vehicles = {
       fuelEfficiency: "±45-48 km/liter",
       engine: "150cc",
       price: 150000,
-      imageUrl: "image/img-pricelist/vario-150, Property 2=01.png",
+      imageUrl: "/assets/images/img//vario-150, Property 2=01.png",
     },
     {
       name: "Yamaha NMAX 155",
@@ -201,7 +203,7 @@ const vehicles = {
       fuelEfficiency: "±40-43 km/liter",
       engine: "155cc",
       price: 180000,
-      imageUrl: "image/img-pricelist/yamaha-nmax-155, Property 2=01.png",
+      imageUrl: "/assets/images/img//yamaha-nmax-155, Property 2=01.png",
     },
     {
       name: "Vespa GTS 300",
@@ -211,7 +213,7 @@ const vehicles = {
       fuelEfficiency: "±25-30 km/liter",
       engine: "300cc",
       price: 210000,
-      imageUrl: "image/img-pricelist/vespa-gts-300, Property 2=02.png",
+      imageUrl: "/assets/images/img//vespa-gts-300, Property 2=02.png",
     },
     {
       name: "U.E-Motor MX1200",
@@ -221,7 +223,7 @@ const vehicles = {
       fuelEfficiency: "±50-60 km/full",
       engine: "1200w",
       price: 180000,
-      imageUrl: "image/img-pricelist/united-e-motor-mx1200, Property 2=gray.png",
+      imageUrl: "/assets/images/img//united-e-motor-mx1200, Property 2=gray.png",
     },
   ],
 };
@@ -282,10 +284,20 @@ const VehicleSection = ({ title, description, vehicles }) => {
   );
 };
 
+const images = [
+  "./public/assets/images/img/slider mobil - honda crv.png",
+  "./public/assets/images/img/slider mobil - toyota avanza.png",
+  "./public/assets/images/img/slider mobil - toyota fortuner.png",
+  "./public/assets/images/img/slider mobil - toyota alpard.png",
+];
+
 const CarRental = () => {
   return (
     <div className="isi-wrapper">
-      <Carousel />
+      <div className="carousel-contenttt">
+        <Carousel images={images} />
+      </div>
+
       <div className="isi">
         <VehicleSection
           title="Multi-Purpose Vehicle"
@@ -309,7 +321,7 @@ const CarRental = () => {
         />
       </div>
       <div className="waves">
-        <img src="image/img-pricelist/waves.png" alt="Waves" />
+        <img src="/assets/images/img//waves.png" alt="Waves" />
       </div>
     </div>
   );

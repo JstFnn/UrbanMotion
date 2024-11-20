@@ -1,19 +1,21 @@
 .section-wrapper {
   height: auto;
   max-width: 1200px;
-  margin: 50px auto;
+  margin: 70px;
   padding: 48px;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-h2{
+h2 {
   font-size: 24px;
 }
-.section-wrapper.col-8{
+
+.section-wrapper.col-8 {
   width: 750px;
 }
+
 .step-container {
   display: flex;
   align-items: center;
@@ -71,11 +73,18 @@ h2{
 .payment-method-wrapper {
   max-width: 1200px;
   /* margin: 0 auto; */
-  padding-left: 0px;
+
   margin: auto;
 }
 
+.detail-sewa-form {
+  margin-left: 70px;
+  margin-right: 70px;
+
+}
+
 .payment-category {
+
   margin-bottom: 15px;
 }
 
@@ -87,8 +96,8 @@ h2{
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  
-  
+
+
 }
 
 .payment-method-item {
@@ -102,7 +111,7 @@ h2{
   border-radius: 8px;
   min-width: 300px;
   max-width: 300px;
-  
+
   margin-bottom: 12px;
 }
 
@@ -116,34 +125,34 @@ h2{
 
 .detail-sewa h2 {
   font-size: 24px;
-  font-weight:600;
+  font-weight: 600;
 }
 
 input[type="radio"] {
   width: 20px;
   height: 20px;
-  appearance: none; 
-  border-radius: 50%; 
+  appearance: none;
+  border-radius: 50%;
   border: 2px solid #ccc;
   background-color: #fff;
   transition: all 0.3s ease;
 }
 
 input[type="radio"]:checked {
-  background-color: #E5E7EA; 
+  background-color: var(--primary-20);
   /* background-color: #ffffff;  */
-  border-color: #ccc; 
+  border-color: #ccc;
   box-shadow: 0px 0px 0px px rgba(103, 110, 118, 0.16);
-  
+
 }
 
 input[type="radio"]:checked::after {
-  content: ''; 
+  content: '';
   position: absolute;
   top: 6px;
   left: 6px;
-  width: 12px; 
-  height: 12px; 
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: #fff;
 }
@@ -162,7 +171,7 @@ input[type="radio"]:hover {
 .row.g-3 {
   text-align: left;
   margin: 0px 80px 80px 80px;
-  display: flex; 
+  display: flex;
 }
 
 .row.g-3 .form-control {

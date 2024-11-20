@@ -81,7 +81,7 @@ const HomePage = () => {
               <h2 className="text-2xl font-bold mb-4">
                 Ingin Naik Transportasi Umum tapi Bingung? Temukan Lokasinya di Sini!
               </h2>
-              <p className="mb-6 text-secondary-30">
+              <p className="mb-6 text-primary-10">
                 Dapatkan informasi lokasi transportasi umum di Jakarta, mulai dari KRL, MRT, LRT, dan Transjakarta.
                 Memudahkan perjalanan Anda menjelajahi Jakarta tanpa khawatir!
               </p>
@@ -97,7 +97,7 @@ const HomePage = () => {
 
       {/* Content 2 - Layanan */}
       <section className="container-fluid content2layanan" id="content2layanan">
-        <div className="container">
+        <div className="container ml-8">
           <div className="row justify-content-center text-center mb-4">
             <div className="content2-text col-12">
               <h2 className="mb-4">
@@ -111,7 +111,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container ml-8">
           <div className="ml-16 row row-cols-1 gap-8 justify-center content2">
             {/* Card 1 */}
             <div className="col">
