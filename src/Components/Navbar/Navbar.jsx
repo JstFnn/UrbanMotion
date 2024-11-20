@@ -72,9 +72,9 @@ export const Navbar = ({ className, ...props }) => {
 
   // Array untuk item dropdown di menu "Transportasi Umum"
   const dropdownItems = [
-    { path: "/transportasi-umum/jadwal", label: "Jadwal Transportasi" },
-    { path: "/transportasi-umum/peta", label: "Peta Rute" },
-    { path: "/transportasi-umum/tarif", label: "Tarif" },
+    { path: "/transportasi-umum/KRL", label: "KRL" },
+    { path: "/transportasi-umum/MRT", label: "MRT & LRT" },
+    { path: "/transportasi-umum/transjakarta", label: "Transjakarta" },
   ];
 
   return (

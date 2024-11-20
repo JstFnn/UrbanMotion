@@ -1,4 +1,4 @@
- .my-account {
+ /* .my-account {
    text-align: center;
    margin-top: 50px;
  }
@@ -25,4 +25,201 @@
 
  .logout-button:hover {
    background-color: #d32f2f;
+ } */
+
+ html,
+ body {
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+ }
+
+ /* My Account */
+ .myaccount-profil {
+   justify-content: center;
+   padding-top: 55px;
+   padding-left: 20px;
+   padding-right: 20px;
+ }
+
+ .myaccount-container {
+   max-width: 1200px;
+   /* Set a max width for better centering */
+   width: 100%;
+   margin: 0 auto;
+   /* Center the container */
+ }
+
+ .myaccount-header-text {
+   background-color: #f9fffc;
+   color: #0b2e34;
+   padding: 40px 0;
+   text-align: center;
+   font-size: 2rem;
+   font-weight: bold;
+ }
+
+ .myaccount-profile-image {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   object-fit: cover;
+ }
+
+ .myaccount-profile-section,
+ .myaccount-personal-section,
+ .myaccount-contact-section {
+   background-color: #ffff;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+   margin: 0 auto;
+   /* Center the sections */
+ }
+
+ .myaccount-profile-section {
+   max-width: 300px;
+   padding: 35px;
+ }
+
+ .myaccount-row {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   max-width: 100%;
+   justify-content: center;
+   /* Center all items in the row */
+   margin-bottom: 30px;
+ }
+
+ .myaccount-col-md-4,
+ .myaccount-col-md-6 {
+   flex: 1;
+   max-width: 100%;
+ }
+
+ .myaccount-col-md-4 {
+   flex: 0 0 30%;
+ }
+
+ .myaccount-col-md-6 {
+   flex: 0 0 45%;
+ }
+
+ /* Adjust these to make personal/contact sections wider */
+ .myaccount-personal-section,
+ .myaccount-contact-section {
+   flex: 0 0 100%;
+   /* Full width for better responsiveness */
+   min-width: 400px;
+ }
+
+ .myaccount .form-control {
+   border-radius: 0;
+ }
+
+ .myaccount-profil .btn-primary {
+   background-color: #235347;
+   border-color: #235347;
+ }
+
+ .myaccount-profil .btn-primary:hover {
+   background-color: #32563a;
+   border-color: #32563a;
+ }
+
+ /* Responsive Styles */
+ @media (max-width: 768px) {
+   .myaccount-profil {
+     padding-top: 40px;
+     /* Reduce overall padding */
+   }
+
+   .myaccount-header-text {
+     font-size: 1.8rem;
+     /* Slightly smaller font size */
+     padding-bottom: 10px;
+   }
+
+   .myaccount-container {
+     padding: 0 15px;
+     /* Add padding for smaller screens */
+   }
+
+   .myaccount-personal-section,
+   .myaccount-contact-section {
+     padding: 15px;
+     /* Reduce padding in sections */
+   }
+
+   .myaccount-col-md-4 {
+     flex: 0 0 100%;
+     /* Full width on smaller screens */
+   }
+
+   .myaccount-col-md-6 {
+     flex: 0 0 100%;
+     /* Full width on smaller screens */
+   }
+ }
+
+ @media (max-width: 480px) {
+   .myaccount-profil {
+     padding-top: 40px;
+     /* Further reduce overall padding */
+   }
+
+   .myaccount-header-text {
+     font-size: 1.5rem;
+     /* Smaller header size */
+     padding-bottom: 20px;
+   }
+
+   .myaccount-profile-image {
+     width: 80px;
+     /* Smaller profile image */
+     height: 80px;
+     /* Smaller profile image */
+   }
+
+   .myaccount-profile-section,
+   .myaccount-personal-section,
+   .myaccount-contact-section {
+     padding: 10px;
+     /* Further reduce padding */
+   }
+
+   .myaccount .form-control {
+     font-size: 0.9rem;
+     /* Smaller font size for inputs */
+   }
+
+   .myaccount .btn-primary {
+     font-size: 0.9rem;
+     /* Smaller button font size */
+   }
+ }
+
+ .myaccount-profil {
+   background-color: #f3f4f6;
+   min-height: 100vh;
+   /* Pastikan seluruh layar terisi */
+ }
+
+ .container {
+   max-width: 900px;
+ }
+
+ .form-input {
+   border: 1px solid #d1d5db;
+   border-radius: 8px;
+   padding: 8px 12px;
+   background-color: #fff;
+   outline: none;
+   width: 100%;
+ }
+
+ .form-input:focus {
+   border-color: #2563eb;
+   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
  }

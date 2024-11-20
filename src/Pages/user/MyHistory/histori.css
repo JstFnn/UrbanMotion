@@ -1,0 +1,155 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f9fffc;
+  margin: 0;
+  padding: 0;
+}
+
+/* My History Section */
+.myhistory-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.myhistory-header {
+  background-color: #F9FFFC;
+  color: #0b2e34;
+  padding: 20px 0 15px 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.myhistory-profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.myhistory-profile-section {
+  background-color: #fff;
+  padding: 35px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  /* Set fixed width for profile box */
+  margin: 0 auto;
+  /* Center the profile box */
+}
+
+.myhistory-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* Center containers */
+  gap: 20px;
+  /* Space between profile and table */
+  padding: 20px;
+  /* Padding around the whole container */
+}
+
+.myhistory-vehicle-table-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 800px;
+  /* Max width for vehicle table */
+  padding: 24px;
+  overflow-x: auto;
+  /* Allow horizontal scrolling if necessary */
+}
+
+.myhistory-vehicle-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.myhistory-vehicle-table th,
+.myhistory-vehicle-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.myhistory-vehicle-table th {
+  font-weight: 600;
+  background-color: #f5f5f5;
+}
+
+.myhistory-profile-links a {
+  color: #6c757d;
+}
+
+.myhistory-section .btn-primary {
+  background-color: #235347;
+  border-color: #235347;
+  color: #ffff;
+}
+
+.myhistory-section .btn-primary:hover {
+  background-color: #32563a;
+  border-color: #32563a;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .myhistory-section {
+    padding-top: 50px;
+  }
+
+  .myhistory-header {
+    padding-bottom: 0px;
+  }
+
+  .myhistory-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .myhistory-profile-section {
+    width: 300px;
+    /* Keep profile section width same as original */
+  }
+
+  .myhistory-vehicle-table-container {
+    margin-top: 20px;
+    width: 100%;
+    /* Ensure table takes full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .myhistory-profile-section {
+    width: 300px;
+    /* Keep profile section width same as original */
+    padding: 10px;
+  }
+
+  .myhistory-vehicle-table-container {
+    width: 90%;
+    /* Ensure table container fits well */
+    padding: 16px;
+    /* Slightly less padding for smaller screens */
+  }
+
+  .myhistory-vehicle-table th,
+  .myhistory-vehicle-table td {
+    padding: 8px;
+    /* Reduce padding for smaller screens */
+    font-size: 0.8rem;
+    /* Further reduce font size */
+  }
+
+  .myhistory-profile-image {
+    width: 80px;
+    /* Slightly smaller image */
+    height: 80px;
+  }
+
+  .myhistory-header {
+    font-size: 1.5rem;
+    /* Smaller header size */
+  }
+}

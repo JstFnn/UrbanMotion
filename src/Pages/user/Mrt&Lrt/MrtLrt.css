@@ -1,0 +1,330 @@
+/*hero */
+.hero {
+    position: relative;
+  }
+  
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #f8f3ed;
+    padding-left: 100px;
+    padding-right: 650px;
+    box-sizing: border-box; /* Pastikan padding tidak menambah lebar elemen */
+  }
+  
+  .hero h1 {
+    margin-top: -10px;
+    font-size: 55px;
+    font-weight: bold;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+  
+  .MRT {
+    display: flex;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+  
+  .containerMrt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    padding: 5rem;
+  }
+  
+  .contentMrt {
+    flex: 1 1 50%;
+    max-width: 800px;
+    padding-right: 5rem;
+    text-align: left;
+    line-height: 1.8;
+  }
+  
+  .contentMrt h1 {
+    font-weight: 700;
+    color: #0b2e34;
+    padding-bottom: 1rem;
+  }
+  
+  .contentMrt p {
+    font-size: large;
+    padding-bottom: 1rem;
+  }
+  
+  .imagesMrt {
+    flex: 50% 1 1;
+    max-width: 600px;
+    padding-left: 11rem;
+  }
+  
+  .imagesMrt img {
+    max-width: 100%;
+    height: 417px;
+    width: 407px;
+  }
+  
+  .button {
+    display: inline-block;
+    background-color: #3d6856;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background-color 0.3s ease;
+    width: 210px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button:hover {
+    background-color: #2a4a3c;
+  }
+  
+  @media (max-width: 768px) {
+    .content,
+    .image {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  .station-slider-mrt {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: relative;
+    margin: 70 auto;
+    padding: 5rem;
+    overflow: hidden; /* Menyembunyikan bagian yang melebihi frame */
+  }
+  
+  /* Swiper Container */
+  .swiper-container-mrt {
+    width: 100%;
+    max-width: 1000px;
+    margin: 50 auto;
+  }
+  
+  /* .station-card { 
+    background-color: #083d32;
+    border-radius: 32px;
+    overflow: hidden;
+    color: #F3ECDC;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+  }
+  
+  Gambar dalam Kartu Stasiun
+  .station-card img {
+    width: 100%; /* Isi lebar container gambar */
+  /*height: 550px; */ /*Batasi tinggi gambar */
+  /*object-fit: cover; / Menjaga proporsi gambar */
+  
+  .button-image-mrt {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  /* .station-info { 
+    padding-top: 42px;
+    padding-bottom: 39px;
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+  
+  /* .station-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* .station-info p {
+    font-size: 16px;
+    line-height: 1.5;
+  }*/
+  
+  /* Tombol Navigasi */
+  .swiper-button-next,
+  .swiper-button-prev {
+   color: #0b2e34 !important;
+   width: 30px;
+   height: 30px;
+   top: 50%; /* Posisikan di tengah slider */
+   transform: translateY(-50%);
+   font-weight: bolder;
+}
+  
+  /* Responsive Styling untuk Mobile */
+  @media (max-width: 768px) {
+    .swiper-slide-mrt img {
+      max-height: 150px; /* Batasi tinggi gambar untuk mobile */
+    }
+  
+    .station-card-mrt {
+      padding: 10px;
+    }
+  }
+  
+
+
+  .LRT {
+    display: flex;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+  
+  .containerLrt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    padding: 5rem;
+  }
+  
+  .contentLrt {
+    flex: 1 1 50%;
+    max-width: 800px;
+    padding-right: 5rem;
+    text-align: left;
+    line-height: 1.8;
+  }
+  
+  .contentLrt h1 {
+    font-weight: 700;
+    color: #0b2e34;
+    padding-bottom: 1rem;
+  }
+  
+  .contentLrt p {
+    font-size: large;
+    padding-bottom: 1rem;
+  }
+  
+  .imagesLrt {
+    flex: 50% 1 1;
+    max-width: 600px;
+    padding-left: 11rem;
+  }
+  
+  .imagesLrt img {
+    max-width: 100%;
+    height: 417px;
+    width: 407px;
+  }
+  
+  .button {
+    display: inline-block;
+    background-color: #3d6856;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background-color 0.3s ease;
+    width: 210px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button:hover {
+    background-color: #2a4a3c;
+  }
+  
+  @media (max-width: 768px) {
+    .content,
+    .image {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  .station-slider-lrt {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: relative;
+    margin: 0 auto;
+    padding: 5rem;
+    overflow: hidden; /* Menyembunyikan bagian yang melebihi frame */
+  }
+  
+  /* Swiper Container */
+  .swiper-container-lrt {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* .station-card { 
+    background-color: #083d32;
+    border-radius: 32px;
+    overflow: hidden;
+    color: #F3ECDC;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+  }
+  
+  Gambar dalam Kartu Stasiun
+  .station-card img {
+    width: 100%; /* Isi lebar container gambar */
+  /*height: 550px; */ /*Batasi tinggi gambar */
+  /*object-fit: cover; / Menjaga proporsi gambar */
+  
+  .button-image-lrt {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  /* .station-info { 
+    padding-top: 42px;
+    padding-bottom: 39px;
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+  
+  /* .station-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* .station-info p {
+    font-size: 16px;
+    line-height: 1.5;
+  }*/
+  
+  /* Tombol Navigasi */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #0b2e34 !important;
+    width: 30px;
+    height: 30px;
+    top: 50%; /* Posisikan di tengah slider */
+    transform: translateY(-50%);
+    font-weight: bolder;
+  }
+  
+  /* Responsive Styling untuk Mobile */
+  @media (max-width: 768px) {
+    .swiper-slide-lrt img {
+      max-height: 150px; /* Batasi tinggi gambar untuk mobile */
+    }
+  
+    .station-card-lrt {
+      padding: 10px;
+    }
+  }
+

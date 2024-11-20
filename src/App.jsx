@@ -14,7 +14,12 @@ import TentangKami from "./Pages/user/TentangKami/TentangKami";
 import Login from "./Pages/auth/Login/Login";
 import Register from "./Pages/auth/Register/Register";
 import MyAccount from "./Pages/user/MyAccount/MyAccount.jsx";
-// import Myhistory from "./Pages/user/Histori/histori.jsx";
+import Myhistory from "./Pages/user/MyHistory/hostori.jsx";
+import Krl from "./Pages/user/Krl/Krl.jsx";
+import Tj from "./Pages/user/Tj/Tj.jsx";
+import MrtLrt from "./Pages/user/Mrt&Lrt/MrtLrt.jsx";
+import CarRental from "./Pages/user/Pricelist/Pricelist.jsx";
+import Sewa from "./Pages/user/sewa/sewa.jsx";
 
 // Admin PAGES
 
@@ -45,9 +50,10 @@ function AppContent() {
       // user
       "/": "Beranda - Urban Motion",
       "/tentang-kami": "Tentang Kami - Urban Motion",
-      "/transportasi-umum/peta": "Peta - Urban Motion",
-      "/transportasi-umum/jadwal": "Jadwal - Urban Motion",
-      "/transportasi-umum/tarif": "Tarif - Urban Motion",
+      "/transportasi-umum/KRL": "KRL - Urban Motion",
+      "/transportasi-umum/MRT": "MRT & LRT - Urban Motion",
+
+      "/transportasi-umum/transjakarta": "Transjakarta - Urban Motion",
       "/sewa": "Sewa - Urban Motion",
       "/daftar-harga": "Daftar Harga - Urban Motion",
       "/kontak": "Kontak Kami - Urban Motion",
@@ -81,13 +87,16 @@ function AppContent() {
             <Route path="/" element={<HomePage />} />
             <Route path="/tentang-kami" element={<TentangKami />} />
             <Route path="/transportasi-umum" element={<div>Transportasi Umum</div>} />
-            <Route path="/sewa" element={<div>Sewa </div>} />
-            <Route path="/daftar-harga" element={<div>Daftar Harga </div>} />
             <Route path="/kontak" element={<KontakKami />} />
             <Route path="/my-account" element={<MyAccount />} />
-            <Route path="/my-history" element={<div>Transportasi Umum</div>} />
+            <Route path="/my-history" element={<Myhistory />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/transportasi-umum/KRL" element={<Krl />} />
+            <Route path="/transportasi-umum/MRT" element={<MrtLrt />} />
+            <Route path="/transportasi-umum/transjakarta" element={<Tj />} />
+            <Route path="/daftar-harga" element={<CarRental />} />
+            <Route path="/sewa" element={<Sewa />} />
 
             {/* Admin */}
             <Route path="/admin/dashboard" element={<DashboardAdmin />} />
