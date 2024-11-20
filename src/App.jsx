@@ -8,6 +8,7 @@ import Sidebar from "./Pages/admin/componen/Sidebar/sidebar.jsx";
 
 // USER PAGES
 // import Home from "./Pages/user/Beranda/home.jsx";
+import HomePage from "./Pages/user/Home/home.jsx";
 import KontakKami from "./Pages/user/KontakKami/KontakKami";
 import TentangKami from "./Pages/user/TentangKami/TentangKami";
 import Login from "./Pages/auth/Login/Login";
@@ -77,7 +78,7 @@ function AppContent() {
         <div className={`content-area ${isAdminPage ? "admin-content" : ""}`}>
           <Routes>
             {/* User */}
-            <Route path="/" element={<div>Home</div>} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/tentang-kami" element={<TentangKami />} />
             <Route path="/transportasi-umum" element={<div>Transportasi Umum</div>} />
             <Route path="/sewa" element={<div>Sewa </div>} />
