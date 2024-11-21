@@ -1,6 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
+/* * {
+  outline: 1px solid red;
+} */
+
+/* .tentangkami {
+  border: 2px solid red;
+} */
+
+
+
 .Hero-TK {
+
+
   width: 100%;
   max-width: 1240px;
   height: 450px;
@@ -11,6 +23,7 @@
 
 /* Layout Utama */
 .services-tentangkami {
+
   margin-top: 60px;
   display: flex;
   justify-content: flex-start;
@@ -56,6 +69,7 @@
 }
 
 .content-page4-tentangkami {
+
   display: flex;
   align-items: center;
   /* Vertikal tengah */
@@ -95,8 +109,12 @@
 
 /* Responsif untuk Tablet (Lebar Maksimal 992px) */
 @media (max-width: 768px) {
+  .tentangkami {
+    width: auto;
+  }
+
   .Hero-TK {
-    margin: -220px;
+    margin-bottom: 220px;
   }
 
   .services-tentangkami {
@@ -137,8 +155,14 @@
 
 /* Responsif untuk Ponsel (Lebar Maksimal 576px) */
 @media (max-width: 480px) {
+  .tentangkami {
+
+    width: 65%;
+  }
+
   .services-tentangkami {
-    margin-top: 350px;
+
+    margin-top: 450px;
     padding: 10px;
   }
 
@@ -172,7 +196,9 @@
   text-align: center;
 }
 
-.features-tentangkami .grid-tentangkami {
+
+.grid-tentangkami {
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -199,9 +225,13 @@
 /* Responsif untuk Tablet (Lebar Maksimal 768px) */
 @media (max-width: 768px) {
 
-
   .title-tentangkami {
     font-size: 32px;
+  }
+
+  .cardtentangkami {
+    margin-left: 100px;
+    justify-content: center;
   }
 
   .cardtentangkami img {
@@ -218,20 +248,35 @@
   }
 
   .features-tentangkami .grid-tentangkami {
-    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    grid-template-columns: 1fr;
+
   }
 }
 
 /* Responsif untuk Ponsel (Lebar Maksimal 480px) */
 @media (max-width: 480px) {
+
+
   .title-tentangkami {
     font-size: 20px;
+  }
+
+  /* .cardtentangkami {
+
+    transform: scale(0.7);
+  } */
+
+  .cardtentangkami {
+    gap: 0;
+    margin: 0;
   }
 
   .cardtentangkami img {
     width: 50px;
     height: 50px;
   }
+
 
   .card-title {
     font-size: 10px;
@@ -241,9 +286,11 @@
     font-size: 10px;
   }
 
-  .features-tentangkami .grid-tentangkami {
-    grid-template-columns: 1fr;
+  .grid-tentangkami {
+    margin: 0;
+    border: 2px solid red;
   }
+
 }
 
 .Tujuan-tentangkami {

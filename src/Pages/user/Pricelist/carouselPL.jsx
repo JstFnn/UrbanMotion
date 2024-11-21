@@ -63,7 +63,7 @@ const Carousel = ({ images }) => {
           <div
             key={index}
             className={`w-3 h-3 rounded-full cursor-pointer ${
-              currentIndex === index ? "bg-secondary-30" : "bg-gray-400"
+              currentIndex === index ? "bg-primary-20" : "bg-gray-400"
             }`}
             onClick={() => setCurrentIndex(index)}
           />

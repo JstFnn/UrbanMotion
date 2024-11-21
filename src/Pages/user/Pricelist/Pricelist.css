@@ -273,3 +273,95 @@ body {
   height: auto;
   display: block;
 }
+
+/* Untuk layar dengan lebar maksimal 768px */
+@media (max-width: 768px) {
+  .isi {
+
+    padding: 20px 40px;
+    max-width: 90%;
+  }
+
+  .vehicle-header h2 {
+    font-size: 32px;
+  }
+
+  .vehicle-header p {
+    font-size: 16px;
+  }
+
+  .vehicle-cards {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .card {
+    width: 45%;
+  }
+
+  .c-button {
+    width: 200px;
+    font-size: 14px;
+  }
+}
+
+/* Untuk layar dengan lebar maksimal 480px */
+@media (max-width: 480px) {
+  .isi {
+    padding: 15px 20px;
+    max-width: 100%;
+  }
+
+  .vehicle-header h2 {
+    font-size: 24px;
+  }
+
+  .vehicle-header p {
+    font-size: 14px;
+  }
+
+  .vehicle-cards {
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    /* Untuk meratakan card di tengah */
+  }
+
+  .card {
+    width: 100%;
+    /* Lebar penuh */
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 0;
+    /* Menjaga card tetap di tengah */
+  }
+
+  .card img {
+    height: 100px;
+    width: 100%;
+    /* Menyesuaikan gambar dengan ukuran card */
+  }
+
+  .c-button {
+    width: 180px;
+    font-size: 12px;
+  }
+
+  .card h3 {
+    font-size: 10px;
+    /* Sesuaikan ukuran font */
+  }
+
+  .price strong,
+  .price-label,
+  .price .price-duration {
+    font-size: 5px;
+  }
+
+  .rating,
+  .card .features {
+    font-size: 5px;
+    /* Sesuaikan ukuran font */
+  }
+}
