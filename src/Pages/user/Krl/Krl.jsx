@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import RouteOverlay from "../../../Components/RouteOverlay/RouteOverlay";
 import "./Krl.css";
 
 const Krl = () => {
+  // State untuk mengontrol overlay
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+
+  // Fungsi untuk membuka dan menutup overlay
+  const openOverlay = () => setIsOverlayOpen(true);
+  const closeOverlay = () => setIsOverlayOpen(false);
+
   return (
     <>
       {/* Hero Section */}
@@ -26,9 +34,9 @@ const Krl = () => {
               Tempat pemberhentian bagi kereta listrik, dilengkapi dengan fasilitas akses masuk, area tunggu, dan
               layanan tiket untuk mendukung mobilitas penumpang secara efisien di kawasan perkotaan padat.
             </p>
-            <a href="#" className="button">
+            <button className="button" onClick={openOverlay}>
               Lihat Rute
-            </a>
+            </button>
           </div>
           <div className="imagesKrl">
             <img src="/assets/images/fotokrl.png" alt="Gambar KRL" />
@@ -102,6 +110,13 @@ const Krl = () => {
           </div>
         </div>
       </section>
+
+      {/* RouteOverlay Component */}
+      <RouteOverlay
+        isOpen={isOverlayOpen}
+        toggleOverlay={closeOverlay}
+        imagePath="/assets/images/Peta Rute/Peta Rute KRL.jpg" // Gambar rute untuk tombol "Lihat Rute"
+      />
     </>
   );
 };
