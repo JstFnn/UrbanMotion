@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MrtLrt.css";
+import RouteOverlay from "../../../Components/RouteOverlay/RouteOverlay";
 
 const MrtLrt = () => {
+   // State untuk mengontrol overlay
+   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+   const [overlayImage, setOverlayImage] = useState(""); // Untuk menyimpan path gambar
+ 
+   // Fungsi untuk membuka overlay dengan gambar tertentu
+   const openOverlay = (imagePath) => {
+     setOverlayImage(imagePath);
+     setIsOverlayOpen(true);
+   };
+ 
+   // Fungsi untuk menutup overlay
+   const closeOverlay = () => {
+     setIsOverlayOpen(false);
+     setOverlayImage(""); // Reset gambar
+   };
   return (
     <>
       {/* Hero Section */}
@@ -27,9 +43,12 @@ const MrtLrt = () => {
               Jakarta melalui jalur cepat dan efisien. tempat pemberhentian khusus untuk layanan kereta Mass Rapid
               Transit (MRT) yang menghubungkan wilayah di Jakarta melalui jalur cepat dan efisien.
             </p>
-            <a href="#" className="button">
+            <button
+              className="button"
+              onClick={() => openOverlay("/assets/images/Peta Rute/Peta Rute MRT.jpg")}
+            >
               Lihat Rute
-            </a>
+            </button>
           </div>
           <div className="imagesMrt">
             <img src="/assets/images/fotomrt.png" alt="Gambar MRT" />
@@ -116,9 +135,12 @@ const MrtLrt = () => {
               tertutup, akses lift, dan gerbang tiket otomatis, memberikan kenyamanan bagi penumpang di kawasan
               perkotaan.
             </p>
-            <a href="#" className="button">
+            <button
+              className="button"
+              onClick={() => openOverlay("/assets/images/Peta Rute/Peta Rute LRT.jpg")}
+            >
               Lihat Rute
-            </a>
+            </button>
           </div>
           <div className="imagesLrt">
             <img src="/assets/images/fotolrt.png" alt="Gambar LRT" />
@@ -192,6 +214,12 @@ const MrtLrt = () => {
           </div>
         </div>
       </section>
+      {/* RouteOverlay Component */}
+      <RouteOverlay
+        isOpen={isOverlayOpen}
+        toggleOverlay={closeOverlay}
+        imagePath={overlayImage} // Gambar rute sesuai tombol
+      />
     </>
   );
 };

@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Tj.css";
+import RouteOverlay from "../../../Components/RouteOverlay/RouteOverlay";
 
 const Tj = () => {
+   // State untuk mengontrol overlay
+   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+
+   // Fungsi untuk membuka dan menutup overlay
+   const openOverlay = () => setIsOverlayOpen(true);
+   const closeOverlay = () => setIsOverlayOpen(false);
+
   return (
     <>
       {/* Hero Section */}
@@ -28,9 +36,9 @@ const Tj = () => {
               elektronik, dan pintu otomatis untuk akses langsung ke bus demi memastikan perjalanan cepat dan aman di
               jalur bebas hambatan.
             </p>
-            <a href="#" className="button">
+            <button className="button" onClick={openOverlay}>
               Lihat Rute
-            </a>
+            </button>
           </div>
           <div className="imagesTj">
             <img src="/assets/images/fototj.png" alt="Gambar Transjakarta" />
@@ -104,6 +112,12 @@ const Tj = () => {
           </div>
         </div>
       </section>
+      {/* RouteOverlay Component */}
+      <RouteOverlay
+        isOpen={isOverlayOpen}
+        toggleOverlay={closeOverlay}
+        imagePath="/assets/images/Peta Rute/Peta Rute TJ.jpg" // Gambar rute untuk tombol "Lihat Rute"
+      />
     </>
   );
 };
