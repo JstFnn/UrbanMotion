@@ -27,6 +27,7 @@ import DashboardAdmin from "./Pages/admin/page/dashboardAdmin/dashboardAdmin.jsx
 import ProductsPage from "./Pages/admin/page/produkAdmin/productRead/prdoukAdmin.jsx";
 import ProductDetailPage from "./Pages/admin/page/produkAdmin/productDetailEdit/productDetailPage.jsx";
 import ProductsEditPage from "./Pages/admin/page/produkAdmin/productEdit/productEditPage.jsx";
+import AdminSettingsPage from "./Pages/admin/page/settingAdmin/AdminSettingsPage.jsx";
 
 // 404 PAGES
 import NotFoundPage from "./Pages/404/notFound.jsx";
@@ -70,6 +71,7 @@ function AppContent() {
       "/admin/product/add": "Tambah Produk - Urban Motion",
       "/admin/product-edit/:id": "Edit Produk- Urban Motion",
       "/admin/product-delete/:id": "Delete Produk - Urban Motion",
+      "/admin/settings": "Settings - Urban Motion",
     };
 
     // Set the document title based on the current path
@@ -105,6 +107,7 @@ function AppContent() {
             <Route path="/admin/product/add" element={<ProductsAddPage />} />
             <Route path="/admin/product-edit/:id" element={<ProductsEditPage />} />
             <Route path="/admin/product-delete/:id" element={<div>DELETE</div>} />
+            <Route path="/admin/settings" element={<AdminSettingsPage />} />
 
             <Route path="/dummy" element={<div>Lorem Ipsum</div>} />
             <Route path="*" element={<NotFoundPage />} />
