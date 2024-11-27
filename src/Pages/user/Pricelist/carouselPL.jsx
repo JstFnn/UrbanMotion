@@ -53,9 +53,12 @@ const Carousel = ({ images }) => {
       </div>
       {/* Sewa Button */}
       <div className="absolute mb-10 bottom-12 left-1/2 transform -translate-x-1/2 z-10">
-        <button className="rent-button-carousel ">
-          <a href="/sewa">Sewa</a>
+      <a href="/sewa">
+        <button className="rent-button-carousel">
+            Sewa
         </button>
+      </a>
+
       </div>
       {/* Dots */}
       <div className="carousel-indicators absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
