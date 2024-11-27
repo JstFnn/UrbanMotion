@@ -1,4 +1,5 @@
 import "./sewa.style.css";
+import React from "react";
 
 const steps = ["Detail Sewa", "Pilih Metode Pembayaran", "Konfirmasi Pemesanan"];
 
@@ -6,8 +7,8 @@ export default function Sewa(props) {
   return (
     <div>
       <div className="container-sewa ">
-        {/* price list */}
-        <div className="section-wrapper">
+        {/* form section */}
+        <div className="section-form-wrapper">
           {/* steps */}
           <div className="step-container">
             {steps.map((step, index) => {
@@ -18,142 +19,144 @@ export default function Sewa(props) {
           <div className="hor-line">
             <hr />
           </div>
-        </div>
+       
+          <div className="detail-sewa-form  ">
+            <form className="space-y-6">
+              <h2 className="text-2xl font-semibold mb-6">Form Pemesanan</h2>
 
-        <div className="detail-sewa-form  ">
-          <form className="space-y-6">
-            <h2 className="text-2xl font-semibold mb-6">Form Pemesanan</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="col-span-1">
+                  <label for="namalengkap" className="block text-sm font-medium mb-2">
+                    Nama Lengkap
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="nama lengkap"
+                    className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="namalengkap"
+                  />
+                </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="col-span-1">
-                <label for="namalengkap" className="block text-sm font-medium mb-2">
-                  Nama Lengkap
-                </label>
-                <input
-                  type="text"
-                  placeholder="nama lengkap"
-                  className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  id="namalengkap"
-                />
+                <div className="col-span-1">
+                  <label for="pilih-kendaraan" className="block text-sm font-medium mb-2">
+                    Pilih Kendaraan
+                  </label>
+                  <select
+                    className="form-select w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="pilih-kendaraan">
+                    <option disabled selected>
+                      pilih kendaraan
+                    </option>
+                    <option value="1">Toyota Avanza</option>
+                    <option value="2">Mitsubishi Xpander</option>
+                    <option value="3">Suzuki Ertiga</option>
+                    <option value="4">Daihatsu Xenia</option>
+                    <option value="5">Honda CR-V</option>
+                    <option value="6">Suzuki Ignis</option>
+                    <option value="7">Daihatsu Sirion</option>
+                    <option value="8">Honda Brio</option>
+                    <option value="9">Lexus LM</option>
+                    <option value="10">Toyota Alphard</option>
+                    <option value="11">Mercedes Benz S-className</option>
+                    <option value="12">BMW 7 Series</option>
+                    <option value="13">Honda Vario 150</option>
+                    <option value="14">Yamaha NMAX 155</option>
+                    <option value="15">Vespa GTS 300</option>
+                    <option value="16">United E-Motor MX1200</option>
+                  </select>
+                </div>
+
+                <div className="col-span-1">
+                  <label for="alamat" className="block text-sm font-medium mb-2">
+                    Alamat
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="alamat"
+                    className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="alamat"
+                  />
+                </div>
+
+                <div className="col-span-1">
+                  <label for="jumlah-hari" className="block text-sm font-medium mb-2">
+                    Jumlah Hari
+                  </label>
+                  <select
+                    className="form-select w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="jumlah-hari">
+                    <option disabled selected>
+                      jumlah hari
+                    </option>
+                    <option value="1">1 Hari</option>
+                    <option value="2">2 Hari</option>
+                    <option value="3">3 Hari</option>
+                    <option value="4">4 Hari</option>
+                    <option value="5">5 Hari</option>
+                    <option value="6">6 Hari</option>
+                    <option value="7">7 Hari</option>
+                  </select>
+                </div>
+
+                <div className="col-span-1">
+                  <label for="email" className="block text-sm font-medium mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="email"
+                    className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="email"
+                  />
+                </div>
+
+                <div className="col-span-1">
+                  <label for="pilih-driver" className="block text-sm font-medium mb-2">
+                    Pilih Driver
+                  </label>
+                  <select
+                    className="form-select w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="pilih-driver">
+                    <option disabled selected>
+                      pilih driver
+                    </option>
+                    <option value="1">Tanpa Driver</option>
+                    <option value="2">Laki - Laki</option>
+                    <option value="3">Perempuan</option>
+                  </select>
+                </div>
+
+                <div className="col-span-1">
+                  <label for="notelepon" className="block text-sm font-medium mb-2">
+                    No Telepon
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="no telepon"
+                    className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="notelepon"
+                  />
+                </div>
+
+                <div className="col-span-1">
+                  <label for="tanggal" className="block text-sm font-medium mb-2">
+                    Tanggal Sewa
+                  </label>
+                  <input
+                    type="date"
+                    className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="tanggal"
+                  />
+                </div>
               </div>
-
-              <div className="col-span-1">
-                <label for="pilih-kendaraan" className="block text-sm font-medium mb-2">
-                  Pilih Kendaraan
-                </label>
-                <select
-                  className="form-select w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  id="pilih-kendaraan">
-                  <option disabled selected>
-                    pilih kendaraan
-                  </option>
-                  <option value="1">Toyota Avanza</option>
-                  <option value="2">Mitsubishi Xpander</option>
-                  <option value="3">Suzuki Ertiga</option>
-                  <option value="4">Daihatsu Xenia</option>
-                  <option value="5">Honda CR-V</option>
-                  <option value="6">Suzuki Ignis</option>
-                  <option value="7">Daihatsu Sirion</option>
-                  <option value="8">Honda Brio</option>
-                  <option value="9">Lexus LM</option>
-                  <option value="10">Toyota Alphard</option>
-                  <option value="11">Mercedes Benz S-className</option>
-                  <option value="12">BMW 7 Series</option>
-                  <option value="13">Honda Vario 150</option>
-                  <option value="14">Yamaha NMAX 155</option>
-                  <option value="15">Vespa GTS 300</option>
-                  <option value="16">United E-Motor MX1200</option>
-                </select>
-              </div>
-
-              <div className="col-span-1">
-                <label for="alamat" className="block text-sm font-medium mb-2">
-                  Alamat
-                </label>
-                <input
-                  type="text"
-                  placeholder="alamat"
-                  className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  id="alamat"
-                />
-              </div>
-
-              <div className="col-span-1">
-                <label for="jumlah-hari" className="block text-sm font-medium mb-2">
-                  Jumlah Hari
-                </label>
-                <select
-                  className="form-select w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  id="jumlah-hari">
-                  <option disabled selected>
-                    jumlah hari
-                  </option>
-                  <option value="1">1 Hari</option>
-                  <option value="2">2 Hari</option>
-                  <option value="3">3 Hari</option>
-                  <option value="4">4 Hari</option>
-                  <option value="5">5 Hari</option>
-                  <option value="6">6 Hari</option>
-                  <option value="7">7 Hari</option>
-                </select>
-              </div>
-
-              <div className="col-span-1">
-                <label for="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  placeholder="email"
-                  className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  id="email"
-                />
-              </div>
-
-              <div className="col-span-1">
-                <label for="pilih-driver" className="block text-sm font-medium mb-2">
-                  Pilih Driver
-                </label>
-                <select
-                  className="form-select w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  id="pilih-driver">
-                  <option disabled selected>
-                    pilih driver
-                  </option>
-                  <option value="1">Tanpa Driver</option>
-                  <option value="2">Laki - Laki</option>
-                  <option value="3">Perempuan</option>
-                </select>
-              </div>
-
-              <div className="col-span-1">
-                <label for="notelepon" className="block text-sm font-medium mb-2">
-                  No Telepon
-                </label>
-                <input
-                  type="text"
-                  placeholder="no telepon"
-                  className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  id="notelepon"
-                />
-              </div>
-
-              <div className="col-span-1">
-                <label for="tanggal" className="block text-sm font-medium mb-2">
-                  Tanggal Sewa
-                </label>
-                <input
-                  type="date"
-                  className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  id="tanggal"
-                />
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
 
         <div className="container payment-method-wrapper flex flex-col items-center mb-4 ">
           <div className="d-flex flex-row gap-4">
+
+            
             <div className="section-wrapper col-8">
               <h2>Pilih Metode Pembayaran</h2>
               <div className="payment-category">
@@ -303,7 +306,9 @@ export default function Sewa(props) {
                   <strong className="price">Rp 1.200.000</strong>
                 </p>
                 <div className="confirm-button">
-                  <button>Konfirmasi Pemesanan</button>
+                  <a href="./Konfirmasi">
+                    <button>Konfirmasi Pemesanan</button>
+                  </a>
                 </div>
               </div>
             </div>

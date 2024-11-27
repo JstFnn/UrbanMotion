@@ -2,61 +2,6 @@ import React from "react";
 import "./PriceList.css";
 import Carousel from "./carouselPL";
 
-// Component untuk Carousel
-// const Carousel = () => {
-//   return (
-//     <div id="carouselExampleCaptions" className="carousel slide">
-//       {/* <div className="carousel-indicators">
-//         {[...Array(4)].map((_, index) => (
-//           <button
-//             key={index}
-//             type="button"
-//             data-bs-target="#carouselExampleCaptions"
-//             data-bs-slide-to={index}
-//             className={index === 0 ? 'active' : ''}
-//             aria-current={index === 0 ? 'true' : undefined}
-//             aria-label={`Slide ${index + 1}`}
-//           ></button>
-//         ))}
-//       </div> */}
-//       <div className="carousel-inner">
-//         {[
-//           { imgSrc: "/assets/images/img//slider mobil - toyota fortuner.png", alt: "Toyota Fortuner" },
-//           { imgSrc: "/assets/images/img//slider mobil - honda crv.png", alt: "Honda CRV" },
-//           { imgSrc: "/assets/images/img//slider mobil - toyota avanza.png", alt: "Toyota Avanza" },
-//           { imgSrc: "/assets/images/img//slider mobil - toyota alpard.png", alt: "Toyota Alpard" },
-//         ].map((slide, index) => (
-//           <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-//             <img src={slide.imgSrc} className="d-block w-100" alt={slide.alt} />
-//             <div className="carousel-caption d-none d-md-block">
-//               <div className="button-wrapper">
-//                 <button className="c-button">Sewa</button>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//       <button
-//         className="carousel-control-prev"
-//         type="button"
-//         data-bs-target="#carouselExampleCaptions"
-//         data-bs-slide="prev">
-//         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-//         <span className="visually-hidden">Previous</span>
-//       </button>
-//       <button
-//         className="carousel-control-next"
-//         type="button"
-//         data-bs-target="#carouselExampleCaptions"
-//         data-bs-slide="next">
-//         <span className="carousel-control-next-icon" aria-hidden="true"></span>
-//         <span className="visually-hidden">Next</span>
-//       </button>
-//     </div>
-//   );
-// };
-
-// Car data to be displayed in cards
 const vehicles = {
   mpv: [
     {
@@ -261,9 +206,11 @@ const VehicleCard = ({ name, rating, passengers, transmission, airConditioner, d
           <span className="price-duration">/hari</span>
         </span>
       </p>
-      <button className="rent-button">
-        <a href="">Sewa</a>
-      </button>
+      <a href="sewa">
+        <button className="rent-button">
+          Sewa
+        </button>
+      </a>
     </div>
   );
 };

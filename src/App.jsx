@@ -20,6 +20,7 @@ import Tj from "./Pages/user/Tj/Tj.jsx";
 import MrtLrt from "./Pages/user/Mrt&Lrt/MrtLrt.jsx";
 import CarRental from "./Pages/user/Pricelist/Pricelist.jsx";
 import Sewa from "./Pages/user/sewa/sewa.jsx";
+import Konfirmasi from "./Pages/user/Konfirmasi-Sewa/Konfirmasi.jsx";
 
 // Admin PAGES
 
@@ -99,6 +100,7 @@ function AppContent() {
             <Route path="/transportasi-umum/transjakarta" element={<Tj />} />
             <Route path="/daftar-harga" element={<CarRental />} />
             <Route path="/sewa" element={<Sewa />} />
+            <Route path="/Konfirmasi" element={<Konfirmasi />} />
 
             {/* Admin */}
             <Route path="/admin/dashboard" element={<DashboardAdmin />} />
