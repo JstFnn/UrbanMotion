@@ -1,30 +1,51 @@
-.section-form-wrapper {
-  
+
+.section-wrapper-sewa {
   height: auto;
+  /* max-width: 1200px; */
+  width: auto;
   max-width: 1200px;
-  margin: 70px;
+  margin: 70px 125px 0px 125px;
   padding: 48px;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
 }
-.section-wrapper {
-  height: auto;
-  max-width: 1200px;
-  margin: 70px;
-  padding: 48px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
+
+
 
 h2 {
   font-size: 24px;
 }
 
+.payment-method-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  box-sizing: border-box;
+  /* gap: 0px; */
+  
+}
+
+.section-wrapper {
+
+  height: auto;
+  padding: 48px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .section-wrapper.col-8 {
   width: 750px;
+  margin: 50px 0px 70px 95px;
 }
+
+.section-wrapper.col-4 {
+  width: 400px;
+  margin: 50px 95px 70px 0px;
+}
+
 
 .step-container {
   display: flex;
@@ -80,12 +101,7 @@ h2 {
   margin: 50px;
 }
 
-.payment-method-wrapper {
-  max-width: 1200px;
-  /* margin: 0 auto; */
 
-  margin: auto;
-}
 
 .detail-sewa-form {
   margin-left: 70px;
@@ -258,214 +274,4 @@ hr {
 
 .confirm-button button:focus {
   outline: none;
-}
-
-/* Responsif untuk layar dengan lebar maksimal 768px */
-@media (max-width: 768px) {
-  .container-sewa {
-    margin-left: 70px;
-    margin-right: 70px;
-  }
-
-  .section-wrapper {
-    margin: 20px;
-    padding: 30px;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
-
-  .section-wrapper.col-8 {
-    width: 100%;
-  }
-
-  .step-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .step {
-    margin: 10px 0;
-  }
-
-  .circle {
-    width: 24px;
-    height: 24px;
-    font-size: 12px;
-  }
-
-  .step-text {
-    font-size: 14px;
-  }
-
-  .separator {
-    display: none;
-    /* Menyembunyikan separator */
-  }
-
-  .hor-line hr {
-    width: 100%;
-  }
-
-  .payment-method-wrapper {
-    max-width: 100%;
-    margin: auto;
-  }
-
-  .detail-sewa-form {
-    margin: 10px;
-  }
-
-  .payment-method-list {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .payment-method-item {
-    width: 100%;
-    margin-right: 0;
-  }
-
-  .payment-method-item-logo {
-    width: 30px;
-  }
-
-  .payment-method-item-title {
-    font-size: 14px;
-  }
-
-  .row.g-3 {
-    flex-direction: column;
-    margin: 0 20px 20px;
-  }
-
-  .row.g-3 .form-control {
-    font-size: 14px;
-  }
-
-  .details p {
-    font-size: 14px;
-  }
-
-  hr {
-    margin: 15px 0;
-  }
-
-  .price-line {
-    font-size: 14px;
-  }
-
-  .total {
-    font-size: 16px;
-  }
-
-  .confirm-button button {
-    padding: 8px 20px;
-    font-size: 14px;
-  }
-}
-
-/* Responsif untuk layar dengan lebar maksimal 480px */
-@media (max-width: 480px) {
-
-  .container-sewa {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .section-wrapper {
-    margin-bottom: 20px;
-    padding: 20px;
-
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  .step-container {
-    flex-direction: column;
-    align-items: flex-start;
-
-  }
-
-  .step {
-    margin: 5px 0;
-  }
-
-  .circle {
-    width: 20px;
-    height: 20px;
-    font-size: 10px;
-  }
-
-  .step-text {
-    font-size: 12px;
-  }
-
-  .separator {
-    display: none;
-  }
-
-  .hor-line hr {
-    width: 100%;
-  }
-
-  .payment-method-wrapper {
-    max-width: 100%;
-    margin: auto;
-  }
-
-  .detail-sewa-form {
-    margin: 50px;
-  }
-
-  .payment-method-list {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .payment-method-item {
-    width: 100%;
-    margin-right: 0;
-  }
-
-  .payment-method-item-logo {
-    width: 25px;
-  }
-
-  .payment-method-item-title {
-    font-size: 12px;
-  }
-
-  .row.g-3 {
-    flex-direction: column;
-    margin: 0 10px 10px;
-  }
-
-  .row.g-3 .form-control {
-    font-size: 12px;
-  }
-
-  .details p {
-    font-size: 12px;
-  }
-
-  hr {
-    margin: 10px 0;
-  }
-
-  .price-line {
-    font-size: 12px;
-  }
-
-  .total {
-    font-size: 14px;
-  }
-
-  .confirm-button button {
-    padding: 6px 16px;
-    font-size: 12px;
-  }
 }

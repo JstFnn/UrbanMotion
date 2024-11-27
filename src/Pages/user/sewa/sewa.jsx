@@ -1,5 +1,4 @@
 import "./sewa.style.css";
-import React from "react";
 
 const steps = ["Detail Sewa", "Pilih Metode Pembayaran", "Konfirmasi Pemesanan"];
 
@@ -8,7 +7,7 @@ export default function Sewa(props) {
     <div>
       <div className="container-sewa ">
         {/* form section */}
-        <div className="section-form-wrapper">
+        <div className="section-wrapper-sewa">
           {/* steps */}
           <div className="step-container">
             {steps.map((step, index) => {
@@ -144,19 +143,16 @@ export default function Sewa(props) {
                   </label>
                   <input
                     type="date"
-                    className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="form-input  px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     id="tanggal"
                   />
                 </div>
               </div>
             </form>
           </div>
-        </div>
+          </div>
 
-        <div className="container payment-method-wrapper flex flex-col items-center mb-4 ">
-          <div className="d-flex flex-row gap-4">
-
-            
+        <div className="payment-method-wrapper">
             <div className="section-wrapper col-8">
               <h2>Pilih Metode Pembayaran</h2>
               <div className="payment-category">
@@ -306,13 +302,11 @@ export default function Sewa(props) {
                   <strong className="price">Rp 1.200.000</strong>
                 </p>
                 <div className="confirm-button">
-                  <a href="./Konfirmasi">
-                    <button>Konfirmasi Pemesanan</button>
-                  </a>
+                  <button>Konfirmasi Pemesanan</button>
                 </div>
               </div>
             </div>
-          </div>
+  
         </div>
       </div>
     </div>
