@@ -223,3 +223,100 @@ button#registerButton {
   margin-right: auto;
   transition: background-color 0.3s;
 }
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: -3;
+  /* margin-bottom: 10px; */
+  display: block;
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and smaller screens (768px) */
+@media (max-width: 768px) {
+  .register .container {
+    flex-direction: column;
+  }
+
+  .register .left {
+    width: 100%;
+    height: 250px;
+  }
+
+  .register .right {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .register .right .login-form {
+    width: 90%;
+    max-width: none;
+    padding: 15px;
+  }
+
+  .register .right .login-form h2 {
+    font-size: 20px;
+  }
+
+  .register .right .login-form input,
+  .register .right .login-form button {
+    padding: 12px;
+  }
+
+  .register .right .register a {
+    font-size: 14px;
+  }
+
+  .register .right .google-login {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  .register-form i {
+    color: white;
+  }
+}
+
+/* For mobile screens (480px) */
+@media (max-width: 480px) {
+  .register .container {
+    flex-direction: column;
+  }
+
+  .register .left {
+    width: 100%;
+    height: 200px;
+  }
+
+  .register .right .login-form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .register .right .login-form h2 {
+    font-size: 18px;
+  }
+
+  .register .right .login-form input,
+  .register .right .login-form button {
+    padding: 10px;
+  }
+
+  .register .right .register a {
+    font-size: 12px;
+  }
+
+  .register .right .google-login {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+  }
+
+  .register-form i {
+    color: white;
+  }
+}
