@@ -6,6 +6,7 @@ import "./sidebar.css";
 const SIDEBAR_ITEMS = [
   { name: "Dashboard", icon: "fa-home", color: "#6366f1", href: "/admin/dashboard" },
   { name: "Product", icon: "fa-box", color: "#8B5CF6", href: "/admin/product" },
+  { name: "Booking", icon: "fa-clipboard-list", color: "#8B5CF6", href: "/admin/booking" },
   { name: "Setting", icon: "fa-cogs", color: "#10B981", href: "/admin/settings" },
   { name: "Logout", icon: "fa-sign-out-alt", color: "#F59E0B", href: "/admin/logout" },
 ];

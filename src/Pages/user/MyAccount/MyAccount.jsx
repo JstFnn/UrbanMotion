@@ -37,23 +37,132 @@
 //   );
 // };
 
-import React from "react";
 import { useNavigate } from "react-router-dom"; // Jika menggunakan react-router untuk navigasi
+import { getToken, removeToken } from "../../../utils/authUtils";
+import useFetchData from "../../../hook/useFeatchData";
+import { useEffect, useState } from "react";
+import axiosInstance from "../../../utils/axios";
 
 const MyAccount = () => {
   const navigate = useNavigate(); // React Router untuk navigasi halaman
+  const token = getToken();
+  const {data, loading, error} = useFetchData('/users/profile', token);
+
+  const [profileData, setProfileData] = useState({
+    username: "",
+    email: "",
+    phone_number: "",
+    image: "",
+    photo_profile: null,
+  });
+  // Handle file upload
+  
+  useEffect(() => {
+    if (data) {
+    
+
+      if(data.data.user.photo_profile && data.data.user.photo_profile.includes('uploads')) {
+        setProfileData((prev) => ({
+          ...prev,
+          image: `${import.meta.env.VITE_BACKEND_URL}/${data.data.user.photo_profile}`,
+        }));
+      } else {
+        setProfileData((prev) => ({
+          ...prev,
+          image: data.data.user.photo_profile,
+        }));
+      }
+
+      if (data.data.user.phone_number) {
+        setProfileData((prev) => ({
+          ...prev,
+          phone_number: data.data.user.phone_number.slice(1) ,
+        }));
+      }
+
+      setProfileData((prev) => ({
+        ...prev,
+        username: data.data.user.username,
+        email: data.data.user.email,
+      }));
+
+
+    }
+  }, [data]);
+
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
+
+  const handleUpdate = async() => {
+    try {
+      const formData = new FormData();
+      let phoneNumber = profileData.phone_number
+
+      if (!phoneNumber.startsWith("0")) {
+        phoneNumber = "0" + phoneNumber;
+      }
+      // Append other fields to FormData
+      formData.append("username", profileData.username);
+      formData.append("phone_number", phoneNumber);
+
+      if (profileData.photo_profile) {
+        formData.append("image", profileData.photo_profile);
+      }
+
+      
+
+      await axiosInstance.put("/users/profile", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          "Authorization": `Bearer ${token}`,
+        },
+      });
+
+      window.location.reload();
+
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
+  }
+
+
+  
 
   // Fungsi untuk logout
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn"); // Hapus status login
     localStorage.removeItem("role"); // Hapus role pengguna
+    removeToken() // Hapus Token
     navigate("/login"); // Arahkan pengguna ke halaman login setelah logout
+  };
+
+  const handleUploadFile = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setProfileData((prev) => ({
+        ...prev,
+        photo_profile: file,
+      }))
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfileData((prev) => ({
+          ...prev,
+          image: reader.result,
+        }))
+// Update state with the new image
+      };
+      reader.readAsDataURL(file); // Read file as base64
+    }
   };
 
   // Fungsi untuk menuju halaman histori
   const handleHistori = () => {
     navigate("/my-history"); // Arahkan ke halaman histori
   };
+
+  const userData = data.data.user;
 
   return (
     <section className="myaccount-profil ml-60 py-8 items-center justify-center min-h-screen">
@@ -68,14 +177,45 @@ const MyAccount = () => {
           {/* Profil Section */}
           <div className="lg:w-1/3">
             <div className="bg-primary-10 shadow-md rounded-lg p-6 text-center">
-              <img
-                src="./public/assets/images/windah.jpg"
+            <div className="w-[150px] h-[150px] relative rounded-full mx-auto mb-4">
+                  {/* Display the image */}
+                  <img 
+                    src={profileData.image || "./public/assets/images/windah.jpg"} 
+                    className="object-cover object-center w-full h-full rounded-full" 
+                    alt="Profile Picture" 
+                  />
+
+                  {/* Camera icon for uploading */}
+                  <label 
+                    htmlFor="file" 
+                    className="w-[45px] h-[45px] rounded-full bg-white absolute bottom-[-5px] right-0 z-[100px] flex justify-center items-center cursor-pointer"
+                  >
+                    <img 
+                      src="/public/camera.svg" 
+                      alt="Upload" 
+                      width={20} 
+                      height={20} 
+                      className="text-white" 
+                    />
+                  </label>
+
+                  {/* Hidden file input */}
+                  <input 
+                    type="file" 
+                    hidden 
+                    name="file" 
+                    id="file" 
+                    onChange={handleUploadFile} 
+                  />
+             </div>
+              {/* <img
+                src={userData.photo_profile ? userData.photo_profile : "./public/assets/images/windah.jpg"}
                 alt="Profile Picture"
                 className="rounded-full w-32 h-32 mx-auto mb-4"
-              />
+              /> */}
               <h2 className="text-lg text-secondary-30 font-semibold">Profi Saya</h2>
-              <h4 className="text-lg text-secondary-30 font-semibold">Budiman</h4>
-              <p className="text-secondary-30 mb-4">budiman@gmail.com</p>
+              <h4 className="text-lg text-secondary-30 font-semibold">{userData.username}</h4>
+              <p className="text-secondary-30 mb-4">{userData.email}</p>
 
               <div className="space-x-4">
                 <button
@@ -99,12 +239,12 @@ const MyAccount = () => {
               <div>
                 <h3 className="font-bold text-lg mb-4">Personal</h3>
                 <div className="mb-4">
-                  <label htmlFor="nama" className="block text-sm font-medium mb-1">
+                  <label htmlFor="nama" className="block text-sm font-medium mb-1 ">
                     Nama
                   </label>
-                  <input type="text" id="nama" defaultValue="Budiman" className="form-input w-full" />
+                  <input type="text" id="nama" defaultValue={profileData.username} className="form-input w-full border border-gray-400 p-4 rounded-md" onChange={(e) => setProfileData({...profileData, username: e.target.value})}/>
                 </div>
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <label htmlFor="tgl-lahir" className="block text-sm font-medium mb-1">
                     Tanggal Lahir
                   </label>
@@ -115,7 +255,7 @@ const MyAccount = () => {
                     Alamat
                   </label>
                   <input type="text" id="alamat" defaultValue="Jalan M.H Thamrin" className="form-input w-full" />
-                </div>
+                </div> */}
               </div>
 
               {/* Contact Section */}
@@ -125,23 +265,24 @@ const MyAccount = () => {
                   <label htmlFor="email" className="block text-sm font-medium mb-1">
                     Email
                   </label>
-                  <input type="email" id="email" defaultValue="budiman@gmail.com" className="form-input w-full" />
+                  <input type="email" id="email" defaultValue={profileData.email} className="form-input w-full border border-gray-400 p-4 rounded-md" disabled />
                 </div>
                 <div className="mb-4">
                   <label htmlFor="no-hp" className="block text-sm font-medium mb-1">
                     Nomor HP
                   </label>
                   <div className="flex items-center">
-                    <span className="inline-block bg-gray-200 px-3 py-2 rounded-l">+62</span>
+                    <span className="inline-block bg-gray-200  border border-gray-400 p-4 rounded-r-none rounded-md mr-2">+62</span>
                     <input
                       type="text"
                       id="no-hp"
-                      defaultValue="85785505467"
-                      className="form-input w-full rounded-l-none"
+                      defaultValue={profileData.phone_number}
+                      className="form-input w-full rounded-l-none border border-gray-400 p-4 rounded-md"
+                      onChange={(e) => setProfileData({...profileData, phone_number: e.target.value})}
                     />
                   </div>
                 </div>
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <label htmlFor="instagram" className="block text-sm font-medium mb-1">
                     Instagram
                   </label>
@@ -152,12 +293,18 @@ const MyAccount = () => {
                     Twitter
                   </label>
                   <input type="text" id="twitter" defaultValue="budimanja" className="form-input w-full" />
-                </div>
+                </div> */}
               </div>
+
             </div>
+              <button className="bg-primary-20 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition w-full mt-6" onClick={handleUpdate}>
+                   Update Profile
+              </button>
           </div>
         </div>
       </div>
+
+     
     </section>
   );
 };
