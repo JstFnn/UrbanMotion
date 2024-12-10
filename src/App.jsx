@@ -36,6 +36,7 @@ import NotFoundPage from "./Pages/404/notFound.jsx";
 // CSS
 import "./styles.css";
 import ProductsAddPage from "./Pages/admin/page/produkAdmin/productAdd/productAddPage.jsx";
+import BookingPage from "./Pages/admin/page/bookingAdmin/bookingAdmin.jsx";
 
 function AppContent() {
   const location = useLocation();
@@ -72,6 +73,7 @@ function AppContent() {
       "/admin/product/add": "Tambah Produk - Urban Motion",
       "/admin/product-edit/:id": "Edit Produk- Urban Motion",
       "/admin/product-delete/:id": "Delete Produk - Urban Motion",
+      "/admin/booking": "Booking - Urban Motion",
       "/admin/settings": "Settings - Urban Motion",
     };
 
@@ -109,6 +111,7 @@ function AppContent() {
             <Route path="/admin/product/add" element={<ProductsAddPage />} />
             <Route path="/admin/product-edit/:id" element={<ProductsEditPage />} />
             <Route path="/admin/product-delete/:id" element={<div>DELETE</div>} />
+            <Route path="/admin/booking" element={<BookingPage/>}/>
             <Route path="/admin/settings" element={<AdminSettingsPage />} />
 
             <Route path="/dummy" element={<div>Lorem Ipsum</div>} />
