@@ -26,7 +26,7 @@ const ContactInfo = () => {
             <i className="fas fa-envelope"></i> {/* Ikon Email */}
             Alamat Email
           </p>
-          <p>WebVerse.Studio@gmail.com</p>
+          <p>UrbanMotion.Rent@gmail.com</p>
         </div>
       </div>
 

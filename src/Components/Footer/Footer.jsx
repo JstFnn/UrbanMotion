@@ -77,7 +77,7 @@ class Footer extends React.Component {
                 <i className="fa fa-map-marker" style={{ marginLeft: "15px" }}></i>
               </p>
               <p>
-                UrbanMotion@gmail.com
+                UrbanMotion.Rent@gmail.com
                 <i className="fa fa-envelope" style={{ marginLeft: "15px" }}></i>
               </p>
               <p>
