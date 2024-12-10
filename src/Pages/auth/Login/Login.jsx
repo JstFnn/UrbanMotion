@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import axiosInstance from "../../../utils/axios";
@@ -43,36 +43,31 @@ const Login = () => {
     }
 
     try {
-      
       // Send login request
       const response = await axiosInstance.post("/auth/login", { email, password });
 
-      // Save response data 
+      // Save response data
       const user = response.data.data.user;
       const token = response.data.data.token;
 
-    if (user) {
+      if (user) {
+        // Save login status in localStorage (so login state persists on reload)
+        localStorage.setItem("isLoggedIn", true); // Store login status
+        localStorage.setItem("role", user.role); // Store user role
+        saveToken(token); // Store user token
 
-      // Save login status in localStorage (so login state persists on reload)
-      localStorage.setItem("isLoggedIn", true); // Store login status
-      localStorage.setItem("role", user.role); // Store user role
-      saveToken(token); // Store user token
-
-      // Redirect based on user role (admin or user)
-      if (user.role === "admin") {
-        navigate("/admin/dashboard"); // Redirect to admin dashboard
-      } else if (user.role === "user") {
-        navigate("/"); // Redirect to user home page
+        // Redirect based on user role (admin or user)
+        if (user.role === "admin") {
+          navigate("/admin/dashboard"); // Redirect to admin dashboard
+        } else if (user.role === "user") {
+          navigate("/"); // Redirect to user home page
+        }
       }
-    }
-
     } catch (error) {
       console.log(error);
       setErrorMessage(error.response.data.message);
     }
-
   };
-
 
   // Check login status when the component first mounts
   useEffect(() => {
@@ -141,7 +136,9 @@ const Login = () => {
                 Belum punya akun? <a href="/register">Daftar</a>
               </p>
               <p>Atau</p>
-              <GoogleBtn/>
+              <a>
+                <GoogleBtn />
+              </a>
             </div>
           </div>
         </div>
