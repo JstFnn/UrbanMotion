@@ -1,5 +1,5 @@
 .hero-overlay-TentangKami {
-  background: linear-gradient(90deg, rgba(11, 46, 52, 1) 0%, rgba(0, 0, 0, 0.2) 100%),
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%),
     url(/assets/images/bgheader.jpg);
   background-position: center;
   background-size: cover;
@@ -13,7 +13,6 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  /* Menggunakan relative */
   top: 0;
   left: 0;
   z-index: 10;
@@ -24,8 +23,9 @@
   flex-direction: row;
   gap: 60px;
   align-items: center;
-  width: 1240px;
   position: relative;
+  flex-wrap: wrap;
+  /* Menambah kemampuan untuk elemen merespons */
 }
 
 .hero-text-TentangKami {
@@ -37,7 +37,6 @@
 
 .hero-text-TentangKami h1 {
   color: var(--textcolor-30);
-  /* Text color from :root */
   font-family: var(--headline-1-bold-55-font-family);
   font-size: var(--headline-1-bold-55-font-size);
   line-height: var(--headline-1-bold-55-line-height);
@@ -47,96 +46,93 @@
 
 .hero-content-TentangKami .hero-text-TentangKami p {
   color: var(--textcolor-30);
-  /* Text color from :root */
-  font-family: var(--paragraf-2-reguler-18-font-family, "OpenSans-Regular", sans-serif);
+  font-family: var(--paragraf-2-reguler-18-font-family,
+      "OpenSans-Regular",
+      sans-serif);
   font-size: var(--paragraf-2-reguler-18-font-size, 18px);
   line-height: var(--paragraf-2-reguler-18-line-height, 32px);
   font-weight: var(--paragraf-2-reguler-18-font-weight, 400);
   flex: 1;
 }
 
-/* Responsive untuk 768px */
-@media (max-width: 768px) {
-
+/* Responsive untuk 960px */
+@media (max-width: 960px) {
   .hero-overlay-TentangKami {
     padding: 200px 50px;
-    /* Kurangi padding */
-    background-position: center;
     gap: 1.5rem;
-    /* Kurangi jarak antar elemen */
-    z-index: 10;
   }
 
   .hero-content-TentangKami {
     flex-direction: column;
-    /* Susun elemen secara vertikal */
     gap: 30px;
-    /* Kurangi jarak antar elemen */
     width: 100%;
-    /* Sesuaikan lebar */
   }
 
   .hero-text-TentangKami {
     width: 100%;
-    /* Full width */
   }
 
   .hero-text-TentangKami h1 {
     font-size: 36px;
-    /* Kurangi ukuran font */
     line-height: 46px;
-    /* Kurangi line-height */
     text-align: center;
-    /* Pusatkan teks */
   }
 
   .hero-content-TentangKami .hero-text-TentangKami p {
     font-size: 16px;
-    /* Kurangi ukuran font */
     line-height: 28px;
-    /* Kurangi line-height */
     text-align: center;
-    /* Pusatkan teks */
   }
 }
 
-/* Responsive untuk 480px */
 @media (max-width: 480px) {
   .hero-overlay-TentangKami {
     padding: 150px 20px;
-    /* Padding lebih kecil */
     gap: 1rem;
-    /* Kurangi jarak antar elemen */
-    z-index: 10;
   }
 
   .hero-content-TentangKami {
     gap: 20px;
-    /* Kurangi jarak antar elemen */
     width: 100%;
-    /* Full width */
   }
 
   .hero-text-TentangKami {
     gap: 15px;
-    /* Kurangi jarak antar teks */
+    padding: 30px;
   }
 
   .hero-text-TentangKami h1 {
     font-size: 28px;
-    /* Ukuran font lebih kecil */
     line-height: 38px;
-    /* Line-height lebih kecil */
     text-align: center;
-    /* Pusatkan teks */
   }
 
   .hero-content-TentangKami .hero-text-TentangKami p {
     font-size: 14px;
-    /* Ukuran font lebih kecil */
     line-height: 24px;
-    /* Line-height lebih kecil */
     text-align: center;
-    /* Pusatkan teks */
+  }
+}
+
+/* Tambahan untuk lebar layar yang lebih besar dari 960px */
+@media (min-width: 1200px) {
+  .hero-overlay-TentangKami {
+    padding: 271px 116px;
+    /* Ukuran standar */
+    gap: 2.5rem;
+  }
+
+  .hero-content-TentangKami {
+    gap: 60px;
+  }
+
+  .hero-text-TentangKami h1 {
+    font-size: var(--headline-1-bold-55-font-size);
+    line-height: var(--headline-1-bold-55-line-height);
+  }
+
+  .hero-content-TentangKami .hero-text-TentangKami p {
+    font-size: 18px;
+    line-height: 32px;
   }
 }

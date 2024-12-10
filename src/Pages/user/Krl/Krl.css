@@ -37,31 +37,151 @@
   letter-spacing: 0.5px;
 }
 
+/* Responsive untuk 768px */
+@media (max-width: 768px) {
+  .hero-overlay-Krl {
+    padding: 200px 50px;
+    /* Kurangi padding */
+    background-position: center;
+    gap: 1.5rem;
+    /* Kurangi jarak antar elemen */
+    z-index: 10;
+  }
+
+  .hero-content-Krl {
+    flex-direction: column;
+    /* Susun elemen secara vertikal */
+    gap: 30px;
+    /* Kurangi jarak antar elemen */
+    width: 100%;
+    /* Sesuaikan lebar */
+  }
+
+  .hero-text-Krl {
+    width: 100%;
+    /* Full width */
+  }
+
+  .hero-text-Krl h1 {
+    font-size: 36px;
+    /* Kurangi ukuran font */
+    line-height: 46px;
+    /* Kurangi line-height */
+    text-align: center;
+    /* Pusatkan teks */
+  }
+
+  .hero-content-Krl .hero-text-Krl p {
+    font-size: 16px;
+    /* Kurangi ukuran font */
+    line-height: 28px;
+    /* Kurangi line-height */
+    text-align: center;
+    /* Pusatkan teks */
+  }
+}
+
+/* Responsive untuk 480px */
+@media (max-width: 480px) {
+  .hero-overlay-TentangKami {
+    padding: 150px 20px;
+    /* Padding lebih kecil */
+    gap: 1rem;
+    /* Kurangi jarak antar elemen */
+    z-index: 10;
+  }
+
+  .hero-content-Krl {
+    gap: 20px;
+    /* Kurangi jarak antar elemen */
+    width: 100%;
+    /* Full width */
+  }
+
+  .hero-text-Krl {
+    gap: 15px;
+    /* Kurangi jarak antar teks */
+  }
+
+  .hero-text-Krl h1 {
+    font-size: 28px;
+    /* Ukuran font lebih kecil */
+    line-height: 38px;
+    /* Line-height lebih kecil */
+    text-align: center;
+    /* Pusatkan teks */
+  }
+
+  .hero-content-Krl .hero-text-Krl p {
+    font-size: 14px;
+    /* Ukuran font lebih kecil */
+    line-height: 24px;
+    /* Line-height lebih kecil */
+    text-align: center;
+    /* Pusatkan teks */
+  }
+}
+
 .KRL {
   display: flex;
+  flex-direction: column;
+  /* Atur tata letak vertikal */
   align-items: flex-start;
+  /* Pusatkan konten secara horizontal */
   padding: 2rem;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .containerKrl {
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
-  padding: 5rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  /* Pusatkan kontainer pada layar */
+  width: 100%;
+  text-align: center;
+  padding: 3rem;
+  margin-top: 600px;
 }
 
 .contentKrl {
-  flex: 1 1 50%;
-  max-width: 800px;
-  padding-right: 5rem;
+  flex: 1;
+  /* Proporsi teks */
+  min-width: 500px;
+  max-width: 90%;
   text-align: left;
-  line-height: 1.8;
+  justify-content: center;
+}
+
+.imagesKrl {
+  flex: 1;
+  /* Proporsi gambar */
+  min-width: 500px;
+  max-width: 10%;
+  text-align: center;
+}
+
+.imagesKrl img {
+  max-width: 100%;
+  /* Batasi lebar maksimum gambar */
+  height: auto;
+  /* Pertahankan proporsi gambar */
+  display: block;
+  /* Hilangkan jarak bawaan */
+  margin: 0 auto;
+  /* Pusatkan gambar */
+  border-radius: 10px;
+  /* Opsional: membuat sudut melengkung */
+  object-fit: cover;
+  /* Pastikan gambar terlihat rapi */
 }
 
 .contentKrl h1 {
   font-weight: 700;
   color: #0b2e34;
   padding-bottom: 1rem;
+  font-size: 50px;
 }
 
 .contentKrl p {
@@ -69,19 +189,13 @@
   padding-bottom: 1rem;
 }
 
-.imagesKrl {
-  flex: 50% 1 1;
-  max-width: 600px;
-  padding-left: 11rem;
+.buttonkrl {
+  text-align: center;
+  width: 100%;
+  /* Pusatkan tombol */
 }
 
-.imagesKrl img {
-  max-width: 100%;
-  height: 417px;
-  width: 407px;
-}
-
-.button {
+.button-krl {
   display: inline-block;
   background-color: #3d6856;
   color: #fff;
@@ -94,8 +208,23 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.button:hover {
+.button-krl:hover {
   background-color: #2a4a3c;
+}
+
+/* Responsif */
+@media (max-width: 960px) {
+  .containerKrl {
+    flex-direction: column;
+    /* Susun konten vertikal di layar kecil */
+    align-items: center;
+  }
+
+  .contentKrl,
+  .imagesKrl {
+    max-width: 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -124,43 +253,11 @@
   margin: 50 auto;
 }
 
-/* .station-card { 
-  background-color: #083d32;
-  border-radius: 32px;
-  overflow: hidden;
-  color: #F3ECDC;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: left;
-}
-
-Gambar dalam Kartu Stasiun
-.station-card img {
-  width: 100%; /* Isi lebar container gambar */
-/* /height: 550px; / Batasi tinggi gambar */
-/* /object-fit: cover; / Menjaga proporsi gambar */
-
 .button-image {
   background: none;
   border: none;
   padding: 0;
 }
-
-/* .station-info { 
-  padding-top: 42px;
-  padding-bottom: 39px;
-  padding-right: 35px;
-  padding-left: 35px;
-}
-
-/* .station-info h3 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* .station-info p {
-  font-size: 16px;
-  line-height: 1.5;
-}*/
 
 /* Responsive Styling untuk Mobile */
 @media (max-width: 768px) {

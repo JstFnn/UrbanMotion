@@ -1,34 +1,19 @@
 import React from "react";
 import "./home.css";
+import HeroH from "./heroHome";
 
 const HomePage = () => {
   return (
     <>
-      {/* Hero Section */}
-      <section className="heroHome">
-        <img src="/assets/images/bgheader.jpg " alt="background header" />
-        <div className="heroHome-overlay">
-          <h1>Semua dalam satu solusi mobilitas Anda di Jakarta</h1>
-          <p>
-            Selamat datang di Urban Motion. Nikmati kemudahan akses transportasi umum, rental kendaraan, dan layanan
-            driver untuk perjalanan yang nyaman dan efisien di Jakarta!
-          </p>
-          <div className="flex gap-5 mt-5">
-            <a href="/sewa" className="btn btn-custom">
-              Sewa Kendaraan
-            </a>
-            <a href="/trasnportasi-umum/jadwal" className="btn btn-custom">
-              Informasi Transportasi
-            </a>
-          </div>
-        </div>
-      </section>
+      <div className="Hero-H">
+        <HeroH />
+      </div>
 
       {/* Content 1 */}
       {/* Sewa */}
       <section className="content-section1sewa">
         <div className="containerHome">
-          <div className="text1" style={{ marginRight: "30px" }}>
+          <div className="text1">
             <h2>
               <b>Sewa Kendaraan, Solusi Mobilitas Anda!</b>
             </h2>
@@ -36,11 +21,11 @@ const HomePage = () => {
               Sewa mobil atau motor dengan cepat dan mudah di Urban Motion, tersedia beragam pilihan kendaraan yang
               sesuai kebutuhan perjalanan Anda!
             </p>
-            <a href="#" className="btn btn-custom">
+            <a href="/daftar-harga" className="btn btn-custom">
               Sewa Sekarang
             </a>
           </div>
-          <div className="img-container flex space-x-4">
+          <div className="img-container flex">
             <img
               style={{ marginRight: "10px" }}
               src="/assets/images/FortunerHome.png"
@@ -54,7 +39,7 @@ const HomePage = () => {
               className="img-fluid rounded"
             />
             <img
-              style={{ marginRight: "-50px" }}
+              style={{ marginRight: "0px" }}
               src="/assets/images/Brio Home.png"
               alt="Gambar Honda Brio"
               className="img-fluid rounded"
@@ -77,8 +62,8 @@ const HomePage = () => {
             </div>
 
             {/* Teks */}
-            <div className="lg:w-1/2">
-              <h2 className="text-2xl font-bold mb-4">
+            <div className="text2 lg:w-1/2">
+              <h2 className="text2-xl font-bold mb-4">
                 Ingin Naik Transportasi Umum tapi Bingung? Temukan Lokasinya di Sini!
               </h2>
               <p className="mb-6 text-primary-10">
@@ -86,9 +71,9 @@ const HomePage = () => {
                 Memudahkan perjalanan Anda menjelajahi Jakarta tanpa khawatir!
               </p>
               <a
-                href="#"
+                href="/transportasi-umum/KRL"
                 className="btn btn-custom bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">
-                Lihat Selengkapnya <i className="fa fa-arrow-right"></i>
+                Lihat Selengkapnya
               </a>
             </div>
           </div>
@@ -96,10 +81,10 @@ const HomePage = () => {
       </section>
 
       {/* Content 2 - Layanan */}
-      <section className="container-fluid content2layanan" id="content2layanan">
-        <div className="container ml-8">
+      <section className="my-custom-content2layanan" id="my-custom-content2layanan">
+        <div className="my-custom-container">
           <div className="row justify-content-center text-center mb-4">
-            <div className="content2-text col-12">
+            <div className="my-custom-content2-text col-12">
               <h2 className="mb-4">
                 <b>Layanan Yang Kami Berikan</b>
               </h2>
@@ -109,83 +94,64 @@ const HomePage = () => {
               </p>
             </div>
           </div>
-        </div>
 
-        <div className="container ml-8">
-          <div className="ml-16 row row-cols-1 gap-8 justify-center content2">
+          <div className="my-custom-card-container">
             {/* Card 1 */}
-            <div className="col">
-              <div className="card h-100 shadow-md p-6">
-                <div className="card-body text-center">
-                  {/* Service Icon */}
-                  <div className="service-icon mb-4 mx-auto">
-                    <img src="/assets/images/i bus.png" alt="icon bus" className="w-[30px] h-[30px] mx-auto" />
-                  </div>
-                  <h3 className="service-title text-lg font-bold mb-2">Informasi Transportasi Umum</h3>
-                  <p className="service-description text-gray-600 mb-4">
-                    Temukan tempat transportasi umum terbaru, rute, dan pilihan moda yang sesuai kebutuhan perjalanan
-                    Anda di Jakarta.
-                  </p>
-                  <a
-                    href="#"
-                    className="btn btn-outline-custom text-blue-600 border-2 border-blue-600 px-4 py-2 rounded-full inline-flex items-center gap-2 hover:bg-blue-600 hover:text-white transition">
-                    Selengkapnya <i className="fa fa-arrow-right"></i>
-                  </a>
+            <div className="my-custom-card">
+              <div className="my-custom-card-body text-center">
+                <div className="my-custom-service-icon">
+                  <img src="/assets/images/i bus.png" alt="icon bus" className="my-custom-service-icon-img" />
                 </div>
+                <h3 className="my-custom-service-title">Informasi Transportasi Umum</h3>
+                <p className="my-custom-service-description">
+                  Temukan tempat transportasi umum terbaru, rute, dan pilihan moda yang sesuai kebutuhan perjalanan Anda
+                  di Jakarta.
+                </p>
+                <a href="/transportasi-umum/KRL" className="btn my-custom-btn-outline">
+                  Selengkapnya <i className="fa fa-arrow-right"></i>
+                </a>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="col">
-              <div className="card h-100 shadow-md p-6">
-                <div className="card-body text-center">
-                  {/* Service Icon */}
-                  <div className="service-icon mb-4 mx-auto">
-                    <img src="/assets/images/i car.png" alt="icon mobil" className="w-[30px] h-[30px] mx-auto" />
-                  </div>
-                  <h3 className="service-title text-lg font-bold mb-2">Rental Kendaraan</h3>
-                  <p className="service-description text-gray-600 mb-4">
-                    Sewa motor dan mobil cepat dan mudah, tersedia dengan berbagai pilihan kendaraan sesuai kebutuhan
-                    Anda.
-                  </p>
-                  <a
-                    href="#"
-                    className="btn btn-outline-custom text-blue-600 border-2 border-blue-600 px-4 py-2 rounded-full inline-flex items-center gap-2 hover:bg-blue-600 hover:text-white transition">
-                    Selengkapnya <i className="fa fa-arrow-right"></i>
-                  </a>
+            <div className="my-custom-card">
+              <div className="my-custom-card-body text-center">
+                <div className="my-custom-service-icon">
+                  <img src="/assets/images/i car.png" alt="icon mobil" className="my-custom-service-icon-img" />
                 </div>
+                <h3 className="my-custom-service-title">Rental Kendaraan</h3>
+                <p className="my-custom-service-description">
+                  Sewa motor dan mobil cepat dan mudah, tersedia dengan berbagai pilihan kendaraan sesuai kebutuhan
+                  Anda.
+                </p>
+                <a href="/daftar-harga" className="btn my-custom-btn-outline">
+                  Selengkapnya <i className="fa fa-arrow-right"></i>
+                </a>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="col">
-              <div className="card h-100 shadow-md p-6">
-                <div className="card-body text-center">
-                  {/* Service Icon */}
-                  <div className="service-icon mb-4 mx-auto">
-                    <img src="/assets/images/i steer.png" alt="icon stir" className="w-[30px] h-[30px] mx-auto" />
-                  </div>
-                  <h3 className="service-title text-lg font-bold mb-2">Layanan Driver</h3>
-                  <p className="service-description text-gray-600 mb-4">
-                    Layanan driver profesional untuk perjalanan aman dan nyaman, opsi driver wanita khusus bagi
-                    penumpang perempuan.
-                  </p>
-                  <a
-                    href="#"
-                    className="btn btn-outline-custom text-blue-600 border-2 border-blue-600 px-4 py-2 rounded-full inline-flex items-center gap-2 hover:bg-blue-600 hover:text-white transition">
-                    Selengkapnya <i className="fa fa-arrow-right"></i>
-                  </a>
+            <div className="my-custom-card">
+              <div className="my-custom-card-body text-center">
+                <div className="my-custom-service-icon">
+                  <img src="/assets/images/i steer.png" alt="icon stir" className="my-custom-service-icon-img" />
                 </div>
+                <h3 className="my-custom-service-title">Layanan Driver</h3>
+                <p className="my-custom-service-description">
+                  Layanan driver profesional untuk perjalanan aman dan nyaman, opsi driver wanita khusus bagi penumpang
+                  perempuan.
+                </p>
+                <a href="/sewa" className="btn my-custom-btn-outline">
+                  Selengkapnya <i className="fa fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="container">
-          <div className="row justify-content-center mt-4">
+          <div className="row justify-content-center mt-9">
             <div className="col text-center">
-              <a href="#" className="btn btn-customselengkapnya px-4">
-                Baca Selengkapnya <i className="fa fa-arrow-right"></i>
+              <a href="/tentang-kami" className="btn my-custom-btn-selengkapnya">
+                Baca Selengkapnya
               </a>
             </div>
           </div>
@@ -207,8 +173,8 @@ const HomePage = () => {
                 yang cepat dan nyaman.
               </p>
               <div className="rental-card-btn-secondary">
-                <a href="#" className="rental-card-btn-custom">
-                  Baca Selengkapnya
+                <a href="/daftar-harga" className="rental-card-btn-custom">
+                  Sewa Sekarang
                 </a>
               </div>
             </div>
@@ -222,7 +188,7 @@ const HomePage = () => {
         <div className="container mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold">Apa yang mereka katakan?</h2>
         </div>
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="containerkomen mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 */}
           <div className="cardkomen p-6 bg-white rounded-lg shadow-md">
             <div className="flex items-center gap-1 mb-4 text-yellow-500">

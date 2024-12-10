@@ -96,7 +96,7 @@ class TentangKami extends React.Component {
                     </p>
                   </div>
                 </div>
-                <div className="mission-item">
+                <div className="mission-item-tentangkami">
                   <div className="mission-number">02</div>
                   <div>
                     <h4 className="mission-title">Menghadirkan Layanan Sewa Kendaraan yang Fleksibel</h4>
@@ -105,7 +105,7 @@ class TentangKami extends React.Component {
                     </p>
                   </div>
                 </div>
-                <div className="mission-item">
+                <div className="mission-item-tentangkami">
                   <div className="mission-number">03</div>
                   <div>
                     <h4 className="mission-title">Memberikan Pengalaman Pengguna yang Memuaskan</h4>
